@@ -1,0 +1,10 @@
+{
+  "name": "hardhat",
+  "packageManager": "yarn@3.5.0",
+  "scripts": {
+    "fork": "npx hardhat node"
+  },
+  "dependencies": {
+    "hardhat": "^2.13.0"
+  }
+}

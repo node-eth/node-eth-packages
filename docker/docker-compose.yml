@@ -1,0 +1,27 @@
+# You will have to create simlinks between the
+# inside of the Docker image and the outside where the 
+# node dev environment will be if you plan on using it as a dev env.
+#
+#
+# Docker compose has not yet been tested out but connection to the 
+# hardhat instance from the outside world is healthy and working
+
+version: '3'
+
+services:
+
+  hardhat:
+    image: ethereumoptimism/hardhat-node
+    ports:
+      - "8545:8545"
+
+  nodered:
+    depends_on:
+        - hardhat
+    image: nodered/node-red:latest
+    environment:
+        - TZ=America/Los_Angeles
+    ports:
+        - "1880:1880"
+    volumes:
+        - ./nodered-storage:/data

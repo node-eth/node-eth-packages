@@ -1,0 +1,11 @@
+{
+  "name": "monorepo",
+  "packageManager": "yarn@3.5.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "nodemon": "^2.0.21"
+  }
+}
