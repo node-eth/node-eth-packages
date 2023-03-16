@@ -6,9 +6,10 @@ This Monorepo contains everything to get you started on developing the NodeETH n
 Directory structure:
 ```
 .
-+-- dev   (dedicated towards local nodeRED installations)
-|   +-- example-NodeETH@0.0.1
-|   +-- example-NodeETH@0.1.0
++-- develop   (dedicated towards local nodeRED installations)
+|   +-- nodered (root of the local nodeRED installation)
+|       +-- bin, data, system, scripts, node_modules etc.
+|       +-- README.md  - quite useful, check it out
 |
 +-- docker   (contains docker compose stack with nodeRED and hardhat)
 |   +-- nodered-storage
@@ -24,3 +25,7 @@ Directory structure:
 ```
 
 We recommend using the `./dev` directory to manage all your NodeRED installations related to this project.
+
+## NodeRED local installation
+
+Within the `./dev` directory, you will find a local installation of nodeRED
