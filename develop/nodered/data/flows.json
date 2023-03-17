@@ -1,0 +1,82 @@
+[
+    {
+        "id": "7f6c506af0f3f7a3",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3b16256cc6ace3b4",
+        "type": "contract",
+        "name": "Nouns Dao Tres",
+        "address": "0x0BC3807Ec262cB779b38D65b38158acC3bfedE10",
+        "abi": "na"
+    },
+    {
+        "id": "e47616b2a2aa078c",
+        "type": "provider",
+        "name": "Alchemy",
+        "provider": "alchemy",
+        "network": "homestead",
+        "apikey": "spYWfnQoyr8aP6aXQTMppDBWSvBXz_o7"
+    },
+    {
+        "id": "9e91432044bd5650",
+        "type": "GetContractBalance",
+        "z": "7f6c506af0f3f7a3",
+        "name": "Nouns Tres bal",
+        "contract": "3b16256cc6ace3b4",
+        "provider": "e47616b2a2aa078c",
+        "x": 600,
+        "y": 320,
+        "wires": [
+            [
+                "86fbc38b0a456a85"
+            ]
+        ]
+    },
+    {
+        "id": "86fbc38b0a456a85",
+        "type": "debug",
+        "z": "7f6c506af0f3f7a3",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "1f0b8676df13e0b4",
+        "type": "inject",
+        "z": "7f6c506af0f3f7a3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 370,
+        "y": 320,
+        "wires": [
+            [
+                "9e91432044bd5650"
+            ]
+        ]
+    }
+]
