@@ -1,0 +1,36 @@
+<script type="text/javascript">
+  RED.nodes.registerType('PrivateKey', {
+      category: 'config',
+      defaults: {
+        name: {value: "", required: true},
+        type: {value: "", required: true},
+        key: {value: "", required: true}
+      },
+      icon: "file.png",
+      label: function () {
+          return this.name;
+      },
+  });
+</script>
+
+<script type="text/html" data-template-name="PrivateKey">
+  <div class="form-row">
+    <label for="node-config-input-name">Name</label>
+    <input type="text" id="node-config-input-name">
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-type">Key Type</label>
+    <select>
+      <option id="1" value="PrivateKey">Private Key</option>
+      <option id="2" value="Neumonic">Neumonic Phrase</option>
+    </select>
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-key">Key</label>
+    <input type="text" id="node-config-input-key">
+  </div>
+</script>
+
+<script type="text/markdown" data-help-name="PrivateKey">
+  Configuration node that will hold either a encrypted or neumonic ethereum based private key for use in other nodes.
+</script>

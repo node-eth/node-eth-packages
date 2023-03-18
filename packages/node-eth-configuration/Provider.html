@@ -1,0 +1,49 @@
+<script type="text/javascript">
+  RED.nodes.registerType('provider', {
+    category: 'config',
+    defaults: {
+      name: {value: "", required: true},
+      provider: {value: "alchemy", required: true},
+      network: {value: "homestead", required: true},
+      apikey: {value: ""}
+    },
+    label: function () {
+      return this.name;
+    },
+  });
+</script>
+
+<script type="text/html" data-template-name="provider">
+  <div class="form-row">
+    <label for="node-config-input-name">Name</label>
+    <input type="text" id="node-config-input-name">
+  </div>
+
+  <div class="form-row">
+    <label for="node-config-input-provider">Provider</label>
+    <select type="text" id="node-config-input-provider">
+      <option value="alchemy">Alchemy</option>
+    </select>
+  </div>
+
+  <div class="form-row">
+    <label for="node-config-input-network">Network</label>
+    <select type="text" id="node-config-input-network">
+      <option value="homestead">Mainnet</option>
+      <option value="sepolia">Sepolia</option>
+      <option value="goerli">Goerli</option>
+      <option value="arbitrum">Arbitrum</option>
+      <option value="matic">Matic</option>
+      <option value="optimism">Optimism</option>
+    </select>
+  </div>
+
+  <div class="form-row">
+    <label for="node-config-input-apikey">Api Key</label>
+    <input type="text" id="node-config-input-apikey">
+  </div>
+</script>
+
+<script type="text/markdown" data-help-name="provider">
+  Configuration node for initialising a provider in NodeEth nodes(Alchemy Only currently).
+</script>
