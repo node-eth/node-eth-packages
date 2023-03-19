@@ -6,9 +6,10 @@
   "node-red": {
     "version": ">=2.0.0",
     "nodes": {
-      "Contract": "Contract.js",
-      "Provider": "Provider.js",
-      "PrivateKey": "PrivateKey.js"
+      "Contract": "nodes/Contract.js",
+      "Provider": "nodes/Provider.js",
+      "PrivateKey": "nodes/PrivateKey.js",
+      "ChainId": "nodes/ChainId.js"
     }
   },
   "author": "",
