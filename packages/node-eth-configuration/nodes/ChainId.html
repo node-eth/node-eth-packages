@@ -1,0 +1,32 @@
+<script type="text/javascript">
+  RED.nodes.registerType("chainId", {
+    category: "config",
+    defaults: {
+      name: { value: "", required: true },
+      chainName: { value: "", required: true },
+      chainId: { value: "", required: true },
+    },
+    icon: "file.png",
+    label: function () {
+      return this.name;
+    },
+  });
+</script>
+
+<script type="text/html" data-template-name="chainId">
+  <div class="form-row">
+    <label for="node-config-input-name">Name</label>
+    <input type="text" id="node-config-input-name">
+  </div>
+  
+  <div class="form-row">
+    <label for="node-config-input-chainName">Name of the Chain</label>
+    <input type="text" id="node-config-input-chainName">
+  </div>
+
+
+  <div class="form-row">
+    <label for="node-config-input-chainId">Chain ID</label>
+    <input type="number" id="node-config-input-chainId">
+  </div>
+</script>

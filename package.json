@@ -6,6 +6,9 @@
     "packages/*"
   ],
   "dependencies": {
+    "node-eth-configuration": "^1.0.0",
+    "node-eth-general": "^1.0.0",
+    "node-eth-push": "^1.0.0",
     "nodemon": "^2.0.21"
   }
 }

@@ -1,0 +1,9 @@
+{
+  "watch": [
+    "packages/**/*.js",
+    "packages/**/*.ts",
+    "packages/**/*.html"
+    ],
+  "ignore": ["node_modules"],
+  "exec": "echo 'Rebuilding Ho Ho Ho!' && ./scripts/rebuild.sh"
+}
