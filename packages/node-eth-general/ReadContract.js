@@ -15,9 +15,6 @@ module.exports = function (RED) {
       const contractAbi = this.contract.abi
       const args = this.functionInputs.map((obj) => obj.value);
       const providerApi = this.provider.provider  // To implement differnt API's down the road
-      console.log(this.functionInputs)
-      console.log("----------------------")
-      console.log(this.readFrom)
       
       // Alchemy API key check
       let provider = new ethers.AlchemyProvider(network)
@@ -33,7 +30,6 @@ module.exports = function (RED) {
         try {
           if (typeof contract[functionName] === 'function') {
             const result = await contract[functionName](...args);
-            console.log('Function result:', result);
             return {output: result}
           } else {
             console.error(`Function '${functionName}' not found in the contract object`);
