@@ -29,7 +29,7 @@ pid=$(lsof -i:1880 -t); kill -TERM $pid || kill -KILL $pid
 # Installing the packages directly to the local nodeRED instance
 # TODO - add error checking and proper feedback
 echo "Installing the packages"
-# npm install $ROOT_DIR/packages/node-eth-general 
+npm install $ROOT_DIR/packages/node-eth-general 
 npm install $ROOT_DIR/packages/node-eth-configuration 
 npm install $ROOT_DIR/packages/node-eth-push 
 echo "Done installing the packages"

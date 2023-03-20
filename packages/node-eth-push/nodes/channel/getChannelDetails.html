@@ -1,5 +1,5 @@
 <script type="text/javascript">
-  RED.nodes.registerType("getUserSubscriptions", {
+  RED.nodes.registerType("getChannelDetails", {
     category: "Push Protocol",
     color: "#f5b9f4",
     icon: "font-awesome/fa-bell",
@@ -11,7 +11,7 @@
     inputs: 1,
     outputs: 1,
     label: function () {
-      return this.name || "User Subscriptions";
+      return this.name || "Channel Details";
     },
     oneditprepare: function () {
       $("#node-input-env").typedInput({
@@ -30,21 +30,19 @@
   });
 </script>
 
-<script type="text/html" data-template-name="getUserSubscriptions">
-  <div class="form-row">
-    <label for="node-input-name">Name</label>
-    <input type="text" id="node-input-name" />
-  </div>
-  <div class="form-row">
-    <label for="node-input-userConfiguration">User</label>
-    <input type="text" id="node-input-userConfiguration" />
-  </div>
-  <div class="form-row">
-    <label for="node-input-env">Choose API environment:</label>
-    <input type="text" id="node-input-env" />
-  </div>
+<script type="text/html" data-template-name="getChannelDetails">
+    <div class="form-row">
+        <label for="node-input-name">Name</label>
+        <input type="text" id="node-input-name" />
+      </div>
+      <div class="form-row">
+        <label for="node-input-userConfiguration">Channel</label>
+        <input type="text" id="node-input-userConfiguration" />
+      </div>
+      <div class="form-row">
+        <label for="node-input-env">Choose API environment:</label>
+        <input type="text" id="node-input-env" />
+      </div>
 </script>
 
-<script type="text/markdown" data-help-name="getUserSubscriptions">
-  A node to get the balance of a deployed ethereum smart contract.
-</script>
+<script type="text/markdown" data-help-name="getUserSubscriptions"></script>
