@@ -1,23 +1,25 @@
 module.exports = function (RED) {
   const PushService = require("../../lib/PushService");
 
-  function GetNotificationNode(config) {
+  function GetChannelSubscribersNode(config) {
     RED.nodes.createNode(this, config);
 
     var node = this;
     this.userConfiguration = RED.nodes.getNode(config.userConfiguration);
     this.env = config.env;
-    this.spam = config.spam;
+    this.limit = config.limit;
+    this.page = config.page;
 
     const pushService = new PushService(node);
-
+    
     this.on("input", async function (msg, send, log) {
       node.status({ fill: "yellow", shape: "ring", text: "working on it..." });
       pushService
-        .getUserNotifications(
+        .getChannelSubscribers(
           this.userConfiguration.caipAddress,
-          this.spam,
-          this.env
+          this.env,
+          this.page,
+          this.limit
         )
         .then((data) => {
           msg.payload = data;
@@ -25,23 +27,21 @@ module.exports = function (RED) {
           node.status({
             fill: "green",
             shape: "ring",
-            text: `successfully got ${this.spam ? "spam" : ""} notifs on ${
-              this.env
-            } env`,
+            text: `successfully got channel subscribers on ${this.env} env`,
           });
+
         })
-        .catch(() => {
+        .catch((error) => {
           node.status({
             fill: "red",
             shape: "ring",
-            text: `error getting ${this.spam ? "spam" : ""} notifs on ${
-              this.env
-            } env`,
+            text: `error getting channel subscribers ${this.env} env`,
           });
-          node.error("Could not get User notifications");
+          node.error("Could not get Channel Subscribers\n" + error);
         });
-    });
-  }
+    })
 
-  RED.nodes.registerType("getNotification", GetNotificationNode);
+}
+
+  RED.nodes.registerType("getChannelSubscribers", GetChannelSubscribersNode);
 };

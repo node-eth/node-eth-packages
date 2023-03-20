@@ -1,0 +1,68 @@
+<script type="text/javascript">
+    RED.nodes.registerType("getChannelSubscribers", {
+      category: "Push Protocol",
+      color: "#f5b9f4",
+      icon: "font-awesome/fa-bell",
+      defaults: {
+        name: { value: "", required: false },
+        env: { value: "prod", required: true },
+        userConfiguration: { type: "userConfiguration", required: true },
+        page: { value: 1, required: false, validate:function(v) {
+            return v > 0;
+        }},
+        limit: {value: 10, required: false, validate:function(v) {
+            return v > 0 && v < 31
+        }}
+      },
+      inputs: 1,
+      outputs: 1,
+      label: function () {
+        return this.name || "Channel Subscribers";
+      },
+      oneditprepare: function () {
+        $("#node-input-env").typedInput({
+          types: [
+            {
+              value: "env",
+              options: [
+                { value: "prod", label: "Production (prod) - default" },
+                { value: "dev", label: "Development (dev)" },
+                { value: "staging", label: "Staging (staging)" },
+              ],
+            },
+          ],
+        });
+      },
+    });
+  </script>
+  
+  <script type="text/html" data-template-name="getChannelSubscribers">
+      <div class="form-row">
+          <label for="node-input-name">Name</label>
+          <input type="text" id="node-input-name" />
+        </div>
+        <div class="form-row">
+          <label for="node-input-userConfiguration">Channel</label>
+          <input type="text" id="node-input-userConfiguration" />
+        </div>
+        <div class="form-row">
+          <label for="node-input-env">Choose API environment:</label>
+          <input type="text" id="node-input-env" />
+        </div>
+        <div class="form-row">
+          <label for="node-input-page">Page:</label>
+          <input type="number" id="node-input-page" />
+        </div>
+        <div class="form-row">
+          <label for="node-input-limit">Limit:</label>
+          <input type="number" id="node-input-limit" />
+        </div>
+        <div class="form-tips">
+            <span>Page represents the page index of the result, must be greater than 0</span>
+            <br>
+            <span>Limit represents number of items in 1 page, greater than 0 and max 30 </span>
+        </div>
+  </script>
+  
+  <script type="text/markdown" data-help-name="getChannelSubscribers"></script>
+  
