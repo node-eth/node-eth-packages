@@ -1,0 +1,19 @@
+{
+  "name": "node-eth-general",
+  "version": "1.0.0",
+  "description": "General nodes for the node-eth project",
+  "main": "index.js",
+  "node-red": {
+    "version": ">=2.0.0",
+    "nodes": {
+      "GetContractBalance": "GetContractBalance.js",
+      "ReadContract": "ReadContract.js",
+      "WriteContract": "WriteContract.js"
+    }
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ethers": "6.1.0"
+  }
+}

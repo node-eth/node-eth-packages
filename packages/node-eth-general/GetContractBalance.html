@@ -1,0 +1,34 @@
+<script type='text/javascript'>
+  RED.nodes.registerType('GetContractBalance', {
+    category: 'NodeEth',
+    defaults: {
+      name: {value: "", required: true},
+      contract: {type: "contract", required: true},
+      provider: {type: "provider", required: true},
+    },
+    inputs: 1,
+    outputs: 1,
+    label: function () {
+      return this.name
+    } 
+  })
+</script>
+
+<script type="text/html" data-template-name="GetContractBalance">
+  <div class="form-row">
+      <label for="node-input-name">Name</label>
+      <input type="text" id="node-input-name">
+  </div>
+  <div class="form-row">
+      <label for="node-input-contract">Contract</label>
+      <input type="text" id="node-input-contract">
+  </div>
+  <div class="form-row">
+      <label for="node-input-provider">Provider</label>
+      <input type="text" id="node-input-provider">
+  </div>
+</script>
+
+<script type="text/markdown" data-help-name="GetContractBalance">
+  A node to get the balance of a deployed ethereum smart contract.
+</script>

@@ -1,0 +1,17 @@
+{
+  "name": "node-eth-configuration",
+  "version": "1.0.0",
+  "description": "Configuration nodes to support the node-eth project",
+  "main": "index.js",
+  "node-red": {
+    "version": ">=2.0.0",
+    "nodes": {
+      "Contract": "nodes/Contract.js",
+      "Provider": "nodes/Provider.js",
+      "PrivateKey": "nodes/PrivateKey.js",
+      "ChainId": "nodes/ChainId.js"
+    }
+  },
+  "author": "",
+  "license": "ISC"
+}
