@@ -7,12 +7,13 @@
     "version": ">=2.0.0",
     "nodes": {
       "GetContractBalance": "GetContractBalance.js",
-      "ReadContract": "ReadContract.js"
+      "ReadContract": "ReadContract.js",
+      "WriteContract": "WriteContract.js"
     }
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ethers": "5.7.2"
+    "ethers": "6.1.0"
   }
 }

@@ -5,5 +5,5 @@ module.exports = function(RED) {
       this.type = config.type;
       this.key = config.key;
   }
-  RED.nodes.registerType("PrivateKey", PrivateKeyNode);
+  RED.nodes.registerType("privatekey", PrivateKeyNode);
 }

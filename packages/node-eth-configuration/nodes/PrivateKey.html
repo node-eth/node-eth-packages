@@ -1,5 +1,5 @@
 <script type="text/javascript">
-  RED.nodes.registerType('PrivateKey', {
+  RED.nodes.registerType('privatekey', {
       category: 'config',
       defaults: {
         name: {value: "", required: true},
@@ -13,7 +13,7 @@
   });
 </script>
 
-<script type="text/html" data-template-name="PrivateKey">
+<script type="text/html" data-template-name="privatekey">
   <div class="form-row">
     <label for="node-config-input-name">Name</label>
     <input type="text" id="node-config-input-name">
@@ -31,6 +31,6 @@
   </div>
 </script>
 
-<script type="text/markdown" data-help-name="PrivateKey">
+<script type="text/markdown" data-help-name="privatekey">
   Configuration node that will hold either a encrypted or neumonic ethereum based private key for use in other nodes.
 </script>
