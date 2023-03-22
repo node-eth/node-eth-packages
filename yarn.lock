@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@adraffy/ens-normalize@1.8.9":
+  version "1.8.9"
+  resolved "https://registry.npmjs.org/@adraffy/ens-normalize/-/ens-normalize-1.8.9.tgz"
+  integrity sha512-93OmGCV0vO8+JQ3FHG+gZk/MPHzzMPDRiCiFcCQNTCnHaaxsacO3ScTPGlu2wX2dOtgfalbchPcw1cOYYjHCYQ==
+
 "@ethersproject/abi@^5.1.2", "@ethersproject/abi@^5.7.0", "@ethersproject/abi@5.7.0":
   version "5.7.0"
   dependencies:
@@ -296,6 +301,11 @@
 "@noble/hashes@~1.2.0", "@noble/hashes@1.2.0":
   version "1.2.0"
 
+"@noble/hashes@1.1.2":
+  version "1.1.2"
+  resolved "https://registry.npmjs.org/@noble/hashes/-/hashes-1.1.2.tgz"
+  integrity sha512-KYRCASVTv6aeUi1tsF8/vpyR7zpfs3FUzy2Jqm+MU+LmUKhQ0y2FpfwqkCcxSg2ua4GALJd8k2R76WxwZGbQpA==
+
 "@noble/secp256k1@~1.7.0", "@noble/secp256k1@1.7.1":
   version "1.7.1"
 
@@ -556,6 +566,11 @@ adm-zip@^0.4.16:
 
 aes-js@3.0.0:
   version "3.0.0"
+
+aes-js@4.0.0-beta.3:
+  version "4.0.0-beta.3"
+  resolved "https://registry.npmjs.org/aes-js/-/aes-js-4.0.0-beta.3.tgz"
+  integrity sha512-/xJX0/VTPcbc5xQE2VUP91y1xN8q/rDfhEzLm+vLc3hYvb5+qHCnpJRuFcrKn63zumK/sCwYYzhG8HP78JYSTA==
 
 agent-base@6:
   version "6.0.2"
@@ -989,6 +1004,18 @@ ethers@^5.6.8, ethers@5.7.2:
     "@ethersproject/web" "5.7.1"
     "@ethersproject/wordlists" "5.7.0"
 
+ethers@6.1.0:
+  version "6.1.0"
+  resolved "https://registry.npmjs.org/ethers/-/ethers-6.1.0.tgz"
+  integrity sha512-aC45YGbvgXt7Nses5WsdQwc1cUIrrQt32zeFShNW7ZT3RQCIHBnd4nmbE5sJmrp70uTdwkRHkr4cZr1D/YwFPg==
+  dependencies:
+    "@adraffy/ens-normalize" "1.8.9"
+    "@noble/hashes" "1.1.2"
+    "@noble/secp256k1" "1.7.1"
+    aes-js "4.0.0-beta.3"
+    tslib "2.4.0"
+    ws "8.5.0"
+
 ethjs-util@^0.1.6, ethjs-util@0.1.6:
   version "0.1.6"
   dependencies:
@@ -1156,7 +1183,7 @@ hardhat@^2.13.0:
     uuid "^8.3.2"
     ws "^7.4.6"
 
-"hardhat@file:/home/luka/Projects/node-eth-packages/packages/hardhat":
+"hardhat@file:/home/luka/Projects/node-eth/node-eth-packages/packages/hardhat":
   resolved "file:packages/hardhat"
   dependencies:
     hardhat "^2.13.0"
@@ -1440,17 +1467,17 @@ napi-macros@~2.0.0:
 node-addon-api@^2.0.0:
   version "2.0.2"
 
-"node-eth-configuration@file:/home/luka/Projects/node-eth-packages/packages/node-eth-configuration":
+"node-eth-configuration@file:/home/luka/Projects/node-eth/node-eth-packages/packages/node-eth-configuration":
   version "1.0.0"
   resolved "file:packages/node-eth-configuration"
 
-"node-eth-general@file:/home/luka/Projects/node-eth-packages/packages/node-eth-general":
+"node-eth-general@file:/home/luka/Projects/node-eth/node-eth-packages/packages/node-eth-general":
   version "1.0.0"
   resolved "file:packages/node-eth-general"
   dependencies:
-    ethers "5.7.2"
+    ethers "6.1.0"
 
-"node-eth-push@file:/home/luka/Projects/node-eth-packages/packages/node-eth-push":
+"node-eth-push@file:/home/luka/Projects/node-eth/node-eth-packages/packages/node-eth-push":
   version "1.0.0"
   resolved "file:packages/node-eth-push"
   dependencies:
@@ -1770,6 +1797,11 @@ tslib@^1.9.3:
 tslib@^2.3.0:
   version "2.5.0"
 
+tslib@2.4.0:
+  version "2.4.0"
+  resolved "https://registry.npmjs.org/tslib/-/tslib-2.4.0.tgz"
+  integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
+
 tsort@0.0.1:
   version "0.0.1"
 
@@ -1826,6 +1858,11 @@ ws@^7.4.6:
 
 ws@7.4.6:
   version "7.4.6"
+
+ws@8.5.0:
+  version "8.5.0"
+  resolved "https://registry.npmjs.org/ws/-/ws-8.5.0.tgz"
+  integrity sha512-BWX0SWVgLPzYwF8lTzEy1egjhS4S4OEAHfsO8o65WOVsrnSRGaSiUaa9e0ggGlkMTtBlmOpEXiie9RUcBO86qg==
 
 y18n@^5.0.5:
   version "5.0.8"

@@ -1,6 +1,6 @@
 [
     {
-        "id": "83d6624587c5817e",
+        "id": "e1d8d9e2d4ab24bd",
         "type": "tab",
         "label": "Flow 1",
         "disabled": false,
@@ -8,38 +8,22 @@
         "env": []
     },
     {
-        "id": "7273a2ced84609a1",
+        "id": "e4d7f51eb959d502",
         "type": "chainId",
-        "name": "5chain",
-        "chainName": "idk",
+        "name": "nesto nesto",
+        "chainName": "nebitno",
         "chainId": "5"
     },
     {
-        "id": "36658484fdc421e2",
+        "id": "35914e5f0672250c",
         "type": "userConfiguration",
-        "address": "0xD8634C39BBFd4033c0d3289C4515275102423681",
-        "chainId": "7273a2ced84609a1"
+        "address": "0xD8634C39BBFd403c0d3289C4515275102423681",
+        "chainId": "e4d7f51eb959d502"
     },
     {
-        "id": "51d02266e3cec93e",
-        "type": "getNotification",
-        "z": "83d6624587c5817e",
-        "name": "getnotif",
-        "env": "staging",
-        "spam": "false",
-        "userConfiguration": "36658484fdc421e2",
-        "x": 540,
-        "y": 580,
-        "wires": [
-            [
-                "8bc2825e1de0ccb3"
-            ]
-        ]
-    },
-    {
-        "id": "50bc78ab992dd837",
+        "id": "3c100da9d16a9fbf",
         "type": "inject",
-        "z": "83d6624587c5817e",
+        "z": "e1d8d9e2d4ab24bd",
         "name": "",
         "props": [
             {
@@ -57,18 +41,97 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 320,
-        "y": 580,
+        "x": 480,
+        "y": 480,
         "wires": [
             [
-                "51d02266e3cec93e"
+                "7525be1830413ab5"
             ]
         ]
     },
     {
-        "id": "8bc2825e1de0ccb3",
+        "id": "7525be1830413ab5",
+        "type": "getUserSubscriptions",
+        "z": "e1d8d9e2d4ab24bd",
+        "name": "",
+        "env": "staging",
+        "userConfiguration": "35914e5f0672250c",
+        "x": 730,
+        "y": 480,
+        "wires": [
+            [
+                "2e9484f744ee1f9f"
+            ]
+        ]
+    },
+    {
+        "id": "2e9484f744ee1f9f",
+        "type": "function",
+        "z": "e1d8d9e2d4ab24bd",
+        "name": "function 1",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8bafb16eb8b151ad",
+        "type": "searchChannels",
+        "z": "e1d8d9e2d4ab24bd",
+        "name": "",
+        "query": "queryParam",
+        "env": "staging",
+        "page": 1,
+        "limit": "20",
+        "x": 700,
+        "y": 620,
+        "wires": [
+            [
+                "7e03aecfb2cfb00f"
+            ]
+        ]
+    },
+    {
+        "id": "ce75d9f1f051054b",
+        "type": "inject",
+        "z": "e1d8d9e2d4ab24bd",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "queryParam",
+                "v": "Push",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 480,
+        "y": 620,
+        "wires": [
+            [
+                "8bafb16eb8b151ad"
+            ]
+        ]
+    },
+    {
+        "id": "7e03aecfb2cfb00f",
         "type": "debug",
-        "z": "83d6624587c5817e",
+        "z": "e1d8d9e2d4ab24bd",
         "name": "debug 1",
         "active": true,
         "tosidebar": true,
@@ -77,190 +140,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 740,
-        "y": 580,
-        "wires": []
-    },
-    {
-        "id": "48c65682eabf4352",
-        "type": "getUserSubscriptions",
-        "z": "83d6624587c5817e",
-        "name": "subscriptions",
-        "env": "staging",
-        "userConfiguration": "36658484fdc421e2",
-        "x": 550,
-        "y": 520,
-        "wires": [
-            [
-                "0c4a0b70b638e8c5"
-            ]
-        ]
-    },
-    {
-        "id": "f0196b5d9303736d",
-        "type": "inject",
-        "z": "83d6624587c5817e",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 320,
-        "y": 520,
-        "wires": [
-            [
-                "48c65682eabf4352"
-            ]
-        ]
-    },
-    {
-        "id": "0c4a0b70b638e8c5",
-        "type": "debug",
-        "z": "83d6624587c5817e",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 740,
-        "y": 520,
-        "wires": []
-    },
-    {
-        "id": "326847cec5752740",
-        "type": "getChannelDetails",
-        "z": "83d6624587c5817e",
-        "name": "",
-        "env": "staging",
-        "userConfiguration": "36658484fdc421e2",
-        "x": 520,
-        "y": 660,
-        "wires": [
-            [
-                "fca531d6de28f90f"
-            ]
-        ]
-    },
-    {
-        "id": "099831d589994b51",
-        "type": "inject",
-        "z": "83d6624587c5817e",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 320,
-        "y": 660,
-        "wires": [
-            [
-                "326847cec5752740"
-            ]
-        ]
-    },
-    {
-        "id": "fca531d6de28f90f",
-        "type": "debug",
-        "z": "83d6624587c5817e",
-        "name": "debug 3",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 740,
-        "y": 660,
-        "wires": []
-    },
-    {
-        "id": "904f45f331a1a00e",
-        "type": "getChannelSubscribers",
-        "z": "83d6624587c5817e",
-        "name": "Channel Subscribers",
-        "env": "prod",
-        "userConfiguration": "36658484fdc421e2",
-        "page": 1,
-        "limit": 10,
-        "x": 540,
-        "y": 720,
-        "wires": [
-            [
-                "9a7113b6512f79bf"
-            ]
-        ]
-    },
-    {
-        "id": "70fd01f69d2a6762",
-        "type": "inject",
-        "z": "83d6624587c5817e",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 320,
-        "y": 720,
-        "wires": [
-            [
-                "904f45f331a1a00e"
-            ]
-        ]
-    },
-    {
-        "id": "9a7113b6512f79bf",
-        "type": "debug",
-        "z": "83d6624587c5817e",
-        "name": "debug 4",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 740,
-        "y": 720,
+        "x": 920,
+        "y": 620,
         "wires": []
     }
 ]
