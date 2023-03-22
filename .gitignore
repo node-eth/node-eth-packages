@@ -10,4 +10,10 @@
 !.yarn/cache
 #.pnp.*
 
+# node modules ignore
 node_modules
+
+# NodeRED ignore
+# You should ignore the contents of the nodered directory but not the directory itself
+# Run your own nodeREDs
+/develop/nodered/*

@@ -1,7 +1,7 @@
 # A TEMPLATE systemd service file for running Node-RED
 # CHANGE the settings before use.
 #
-# Make sure that you replace all instances of /home/luka/Projects/node-eth-packages/develop/nodered with the actual
+# Make sure that you replace all instances of /home/luka/Projects/node-eth/node-eth-packages/develop/nodered with the actual
 # absolute root path.
 #
 # See https://github.com/TotallyInformation/alternate-node-red-installer
@@ -61,8 +61,8 @@ Group=pi
 #    NOTE: No variable expansion is done.
 #          Do not put credentials into environment variables - use LoadCredential or SetCredential
 
-Environment="NODE_RED_EXE=/home/luka/Projects/node-eth-packages/develop/nodered/node_modules/node-red/red.js"
-Environment="NODE_RED_OPTIONS=--userDir /home/luka/Projects/node-eth-packages/develop/nodered/data -v"
+Environment="NODE_RED_EXE=/home/luka/Projects/node-eth/node-eth-packages/develop/nodered/node_modules/node-red/red.js"
+Environment="NODE_RED_OPTIONS=--userDir /home/luka/Projects/node-eth/node-eth-packages/develop/nodered/data -v"
 
 # Only when running on systems (like most Pi's) with 1GiB or less of RAM
 # Comment out if you have plenty of RAM so that Node.js decides.
@@ -79,12 +79,12 @@ Environment="NODE_RED_OPTIONS=--userDir /home/luka/Projects/node-eth-packages/de
 # makes it nice and easy to change without having to edit this file.
 # Ignored if file does not exist. Entries in file overwrite those above.
 # @See https://www.freedesktop.org/software/systemd/man/systemd.exec.html#EnvironmentFile=
-EnvironmentFile=-/home/luka/Projects/node-eth-packages/develop/nodered/data/envfile.ini
+EnvironmentFile=-/home/luka/Projects/node-eth/node-eth-packages/develop/nodered/data/envfile.ini
 
-WorkingDirectory=/home/luka/Projects/node-eth-packages/develop/nodered
+WorkingDirectory=/home/luka/Projects/node-eth/node-eth-packages/develop/nodered
 
 # PID file
-PIDFile=/home/luka/Projects/node-eth-packages/develop/nodered/nrmain.pid
+PIDFile=/home/luka/Projects/node-eth/node-eth-packages/develop/nodered/nrmain.pid
 
 # Command that is started - for the alternate installer or other manually installed `npm install node-red`
 # @see https://man7.org/linux/man-pages/man5/systemd.service.5.html#COMMAND_LINES for details

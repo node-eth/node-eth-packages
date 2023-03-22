@@ -10,7 +10,8 @@
       "getNotification": "nodes/user/getNotification.js",
       "getUserSubscriptions": "nodes/user/getUserSubscriptions.js",
       "getChannelDetails": "nodes/channel/getChannelDetails.js",
-      "getChannelSubscribers": "nodes/channel/getChannelSubscribers.js"
+      "getChannelSubscribers": "nodes/channel/getChannelSubscribers.js",
+      "searchChannels" : "nodes/channel/searchChannels.js"
     }
   },
   "packageManager": "yarn@3.5.0",
