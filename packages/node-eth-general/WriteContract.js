@@ -7,7 +7,7 @@ module.exports = function (RED) {
     this.provider = RED.nodes.getNode(config.provider)
     this.writeTo = config.writeTo
     this.functionInputs = config.functionInputs;
-    this.privateKey = RED.nodes.getNode(config.privateKey);
+    this.privateKey = RED.nodes.getNode(config.privatekey);
 
     this.on('input', async function (msg, send) {
       const contractAddress = this.contract.address
