@@ -8,7 +8,8 @@
     "nodes": {
       "GetContractBalance": "GetContractBalance.js",
       "ReadContract": "ReadContract.js",
-      "WriteContract": "WriteContract.js"
+      "WriteContract": "WriteContract.js",
+      "TransferEth": "TransferEth.js"
     }
   },
   "author": "",

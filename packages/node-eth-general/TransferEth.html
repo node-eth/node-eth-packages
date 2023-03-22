@@ -1,0 +1,44 @@
+<script>
+  RED.nodes.registerType("TransferEth", {
+    category: "NodeEth",
+    defaults: {
+      name: { value: "", required: true },
+      provider: { type: "provider", required: true },
+      privatekey: { type: "privatekey", required: true },
+      recipientAddress: { value: "", required: true },
+      etherAmount: { value: "", required: true },
+    },
+    inputs: 1,
+    outputs: 1,
+    label: function () {
+      return this.name;
+    },
+  });
+</script>
+
+<script type="text/html" data-template-name="TransferEth">
+  <div class="form-row">
+    <label for="node-input-name">Name</label>
+    <input type="text" id="node-input-name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-provider">Provider</label>
+    <select type="text" id="node-input-provider"></select>
+  </div>
+  <div class="form-row">
+    <label for="node-input-privatekey">Private Key</label>
+    <select type="text" id="node-input-privatekey"></select>
+  </div>
+  <div class="form-row">
+    <label for="node-input-recipientAddress">Recipient Address</label>
+    <input type="text" id="node-input-recipientAddress">
+  </div>
+  <div class="form-row">
+    <label for="node-input-etherAmount">Ether Amount</label>
+    <input type="text" id="node-input-etherAmount">
+  </div>
+</script>
+
+<script type="text/markdown" data-help-name="TransferEth">
+  A node to transfer Ether to a specified recipient address.
+</script>
