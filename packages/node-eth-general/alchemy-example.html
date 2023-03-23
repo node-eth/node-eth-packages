@@ -1,0 +1,36 @@
+<script type="text/javascript">
+    RED.nodes.registerType("alchemy-example", {
+      category: "NodeEth",
+      defaults: {
+        name: { value: "" },
+        alchemy: { value: "", type: "alchemy-config" },
+      },
+      inputs: 1,
+      outputs: 1,
+      icon: "alchemy.png",
+      label: function () {
+        return this.name || "Alchemy Example";
+      },
+      paletteLabel: "Alchemy Example",
+      labelStyle: function () {
+        return this.name ? "node_label_italic" : "";
+      },
+      oneditprepare: function () {
+        // Create dropdown menu of available Alchemy configuration nodes
+        var options = RED.nodes
+          .filterNodes({ type: "alchemy-config" })
+          .map(function (node) {
+            return { value: node.id, label: node.name };
+          });
+  
+        // Set options for alchemy field
+        var alchemyField = $("#node-config-input-alchemy");
+        alchemyField.empty();
+        alchemyField.append($("<option>", { value: "", text: "-- select an Alchemy configuration --" }));
+        $.each(options, function (i, option) {
+          alchemyField.append($("<option>", { value: option.value, text: option.label }));
+        });
+      },
+    });
+  </script>
+  

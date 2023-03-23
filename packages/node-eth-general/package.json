@@ -9,7 +9,8 @@
       "GetContractBalance": "GetContractBalance.js",
       "ReadContract": "ReadContract.js",
       "WriteContract": "WriteContract.js",
-      "TransferEth": "TransferEth.js"
+      "TransferEth": "TransferEth.js",
+      "alchemy-example":"alchemy-example.js"
     }
   },
   "author": "",

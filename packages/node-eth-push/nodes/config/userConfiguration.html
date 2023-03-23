@@ -6,28 +6,29 @@
       address: { value: "", required: true },
       chainId: { type: "chainId", required: true },
     },
+    icon: "file.png",
     label: function () {
-      return this.name || "User Config";
+      return `${this.name}` || "User Config";
     },
   });
 </script>
 
 <script type="text/html" data-template-name="userConfiguration">
   <div class="form-row">
-    <label for="node-input-name">Nickname</label>
-    <input type="text" id="node-input-name" />
+    <label for="node-config-input-name">Name</label>
+    <input type="text" id="node-config-input-name" />
   </div>
   <div class="form-row">
     <label for="node-config-input-address">User Address</label>
     <input type="text" id="node-config-input-address" />
   </div>
   <div class="form-row">
-    <label for="node-config-input-chainId">Chain ID</label>
+    <label for="node-config-input-chainId">Chain</label>
     <input type="text" id="node-config-input-chainId" />
   </div>
   <div class="form-tips">
     <span
-      >Any user who activates themselves as a service on the protocol to send
+      >Any <b>User</b> who activates themselves as a service on the protocol to send
       notifications for its users can be considered a <b>Channel</b>.</span
     >
     <br>
@@ -40,7 +41,7 @@
     >
     <br>
     <br>
-    <span>Every Channel is a Service but not every Service is a Channel</span>
+    <span>Every Channel is a Service (User) but not every Service (User) is a Channel</span>
   </div>
 </script>
 

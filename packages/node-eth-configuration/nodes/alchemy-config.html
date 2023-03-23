@@ -1,0 +1,57 @@
+<script type="text/javascript">
+    RED.nodes.registerType("alchemy-config", {
+      category: "config",
+      defaults: {
+        name: { value: "" },
+        network: { value: "" },
+        apikey: { value: "" },
+        config: { value: "" },
+      },
+      inputs: 0,
+      outputs: 0,
+      icon: "config.png",
+      label: function () {
+        return this.name || "Alchemy Config";
+      },
+      oneditprepare: function () {
+        // Define pre-defined configurations
+        var preDefinedConfigs = [
+          { name: "Ethereum mainnet", network: "mainnet", apikey: "YOUR_API_KEY" },
+          { name: "Rinkeby testnet", network: "rinkeby", apikey: "YOUR_API_KEY" },
+          { name: "Kovan testnet", network: "kovan", apikey: "YOUR_API_KEY" },
+          // Add more pre-defined configurations here...
+        ];
+  
+        // Create dropdown menu of available pre-defined configurations
+        var options = preDefinedConfigs.map(function (config) {
+          return { value: config.name, label: config.name };
+        });
+  
+        // Set options for config field
+        var configField = $("#node-config-input-config");
+        configField.empty();
+        configField.append($("<option>", { value: "", text: "-- select a configuration --" }));
+        $.each(options, function (i, option) {
+          configField.append($("<option>", { value: option.value, text: option.label }));
+        });
+  
+        // Show/hide network and API key fields based on selected configuration
+        $("#node-config-input-config").change(function () {
+          var selectedConfig = $("#node-config-input-config").val();
+          var selectedPredefinedConfig = preDefinedConfigs.find(function (config) {
+            return config.name === selectedConfig;
+          });
+          if (selectedPredefinedConfig) {
+            $("#node-config-input-network").val(selectedPredefinedConfig.network);
+            $("#node-config-input-apikey").val(selectedPredefinedConfig.apikey);
+            $("#node-config-input-network-row").hide();
+            $("#node-config-input-apikey-row").hide();
+          } else {
+            $("#node-config-input-network-row").show();
+            $("#node-config-input-apikey-row").show();
+          }
+        });
+      },
+    });
+  </script>
+  

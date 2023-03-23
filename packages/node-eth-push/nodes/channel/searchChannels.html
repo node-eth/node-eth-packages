@@ -6,6 +6,7 @@
     defaults: {
       name: { value: "", required: false },
       query: { value: "", required: true },
+      queryType: {value: "str", required: true},
       env: { value: "prod", required: true },
       page: {
         value: 1, required: false, validate: function (v) {
@@ -37,9 +38,9 @@
         ],
       });
       $("#node-input-query").typedInput({
-        // type: "str",
+        default: "str",
         types: ["str", "msg", "flow", "global"],
-        typeField: "#node-input-query-type"
+        typeField: $("#node-input-queryType")
       })
     },
   });
@@ -52,8 +53,8 @@
       </div>
       <div class="form-row">
         <label for="node-input-query">Query parameter</label>
-        <input type="hidden" id="node-input-query-type">
         <input type="text" id="node-input-query" />
+        <input type="hidden" id="node-input-queryType">
       </div>
       <div class="form-row">
         <label for="node-input-env">Choose API environment:</label>

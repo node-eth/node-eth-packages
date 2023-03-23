@@ -169,33 +169,44 @@ module.exports = class PushService {
 
   // TODO - alias these functions to optIn / optOut
 
+
+  // #region Subscribe to a Channel
   /**
-   * Promise will get rejected only if the API call fails. API call can return unsuccessful 
-   * subscription, hence returning false
+   * This method returns whether or not the subscription was successful, meaning if user failed to subscribe
+   * because he was already subscribed, the promise will still get resolved. Only exception is the
+   * method failing to execute the .subscribe call
    * 
-   * @returns {Bool} indicating if the subscription was sucessful or not
+   * @param {String} channelCaipAddress - address of the channel this action is directed to
+   * @param {String} userCaipAddress - address of the user performing the action in CAIP
+   * @param {Wallet} _signer - ethers signer instance ethers.Wallet(Private_Key)
+   * @param {String[prod | staging | dev]} env - API environment
+   * 
+   * @returns {Boolean} - whether or not the subscription was sucessful
    */
-  async subscribeToChannel(channelAddress, userAddress, privateKey) {
-    try {
-      let signer = 
+  async subscribeToChannel(channelCaipAddress, userCaipAddress, _signer, _env, _method) {
+    const method = _method; 
+
+    try { 
       await PushAPI.channels.subscribe({
         signer: _signer,
-        channelAddress: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681', // channel address in CAIP
-        userAddress: 'eip155:5:0x52f856A160733A860ae7DC98DC71061bE33A28b3', // user address in CAIP
+        channelAddress: channelCaipAddress, // channel address in CAIP
+        userAddress: userCaipAddress, // user address in CAIP
         onSuccess: () => {
-         console.log('opt in success'); 
+         console.log('Successfully opted in'); 
          Promise.resolve(true)
         },
-        onError: () => {
-          console.error('opt in error');
+        onError: (err) => {
+          console.error('Failed to opt in');
+          console.error(err)
           Promise.resolve(false)
         },
-        env: 'staging'
+        env: _env
       })
     } catch(error) {
       return Promise.reject("Push Service: Error while subscribing to the channel: " + error)
     }
   }
+  // #endregion  
 
   // TODO - unsubscribe
   async unsubscribeFromChannel() {

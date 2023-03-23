@@ -7,11 +7,13 @@
     "version": ">=2.0.0",
     "nodes": {
       "userConfiguration": "nodes/config/userConfiguration.js",
+      "signerConfiguration": "nodes/config/signerConfiguration.js",
       "getNotification": "nodes/user/getNotification.js",
       "getUserSubscriptions": "nodes/user/getUserSubscriptions.js",
       "getChannelDetails": "nodes/channel/getChannelDetails.js",
       "getChannelSubscribers": "nodes/channel/getChannelSubscribers.js",
-      "searchChannels" : "nodes/channel/searchChannels.js"
+      "searchChannels": "nodes/channel/searchChannels.js",
+      "opt": "nodes/opt/opt.js"
     }
   },
   "packageManager": "yarn@3.5.0",

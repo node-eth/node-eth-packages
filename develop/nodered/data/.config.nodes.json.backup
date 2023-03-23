@@ -447,7 +447,7 @@
             "PrivateKey": {
                 "name": "PrivateKey",
                 "types": [
-                    "privatekey"
+                    "privateKey"
                 ],
                 "enabled": true,
                 "local": false,
@@ -465,6 +465,17 @@
                 "user": false,
                 "module": "node-eth-configuration",
                 "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-configuration/nodes/ChainId.js"
+            },
+            "Provider2": {
+                "name": "Provider2",
+                "types": [
+                    "alchemy-config"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-eth-configuration",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-configuration/nodes/alchemy-config.js"
             }
         }
     },
@@ -506,6 +517,28 @@
                 "user": false,
                 "module": "node-eth-general",
                 "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-general/WriteContract.js"
+            },
+            "TransferEth": {
+                "name": "TransferEth",
+                "types": [
+                    "TransferEth"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-eth-general",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-general/TransferEth.js"
+            },
+            "alchemy-example": {
+                "name": "alchemy-example",
+                "types": [
+                    "alchemy-example"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-eth-general",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-general/alchemy-example.js"
             }
         }
     },
@@ -525,6 +558,17 @@
                 "user": false,
                 "module": "node-eth-push",
                 "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-push/nodes/config/userConfiguration.js"
+            },
+            "signerConfiguration": {
+                "name": "signerConfiguration",
+                "types": [
+                    "signerConfiguration"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-eth-push",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-push/nodes/config/signerConfiguration.js"
             },
             "getNotification": {
                 "name": "getNotification",
@@ -571,6 +615,28 @@
                 "user": false,
                 "module": "node-eth-push",
                 "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-push/nodes/channel/getChannelSubscribers.js"
+            },
+            "searchChannels": {
+                "name": "searchChannels",
+                "types": [
+                    "searchChannels"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-eth-push",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-push/nodes/channel/searchChannels.js"
+            },
+            "opt": {
+                "name": "opt",
+                "types": [
+                    "opt-node"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-eth-push",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-push/nodes/opt/opt.js"
             }
         }
     }

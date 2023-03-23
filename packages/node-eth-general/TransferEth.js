@@ -4,7 +4,7 @@ module.exports = function (RED) {
   function TransferEthNode(config) {
     RED.nodes.createNode(this, config);
     this.provider = RED.nodes.getNode(config.provider);
-    this.privateKey = RED.nodes.getNode(config.privatekey);
+    this.privateKey = RED.nodes.getNode(config.privateKey);
     this.recipientAddress = config.recipientAddress;
     this.etherAmount = config.etherAmount;
 

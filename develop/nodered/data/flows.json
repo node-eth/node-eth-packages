@@ -1,6 +1,6 @@
 [
     {
-        "id": "e1d8d9e2d4ab24bd",
+        "id": "6c9177d9d57832c1",
         "type": "tab",
         "label": "Flow 1",
         "disabled": false,
@@ -8,22 +8,60 @@
         "env": []
     },
     {
-        "id": "e4d7f51eb959d502",
+        "id": "96435e2ef929b31c",
+        "type": "privateKey",
+        "name": "mm private key",
+        "key": "0xac79afa6f65d7362d6bd843af62c7af7b657009670e97db97ae1d428f410256a"
+    },
+    {
+        "id": "c9d9dd409ef6ad8b",
         "type": "chainId",
-        "name": "nesto nesto",
-        "chainName": "nebitno",
+        "name": "goerli",
+        "chainName": "goerli",
         "chainId": "5"
     },
     {
-        "id": "35914e5f0672250c",
+        "id": "1acdae887b29ae21",
         "type": "userConfiguration",
-        "address": "0xD8634C39BBFd403c0d3289C4515275102423681",
-        "chainId": "e4d7f51eb959d502"
+        "name": "mm",
+        "address": "0x5368658b8eF047Af9DF427eA4D8c591FC24a7f5E",
+        "chainId": "c9d9dd409ef6ad8b"
     },
     {
-        "id": "3c100da9d16a9fbf",
+        "id": "e83f4e0fc6fbaf8a",
+        "type": "signerConfiguration",
+        "name": "jebo mamu al je zajebano",
+        "userConfig": "1acdae887b29ae21",
+        "privateKeyConfig": "96435e2ef929b31c"
+    },
+    {
+        "id": "1b3937321b4c6087",
+        "type": "userConfiguration",
+        "name": "sta god",
+        "address": "0xnepostoji",
+        "chainId": "c9d9dd409ef6ad8b"
+    },
+    {
+        "id": "7535e1a6dbe784f4",
+        "type": "opt-node",
+        "z": "6c9177d9d57832c1",
+        "name": "asd",
+        "method": "opt-in",
+        "channel": "1b3937321b4c6087",
+        "user": "e83f4e0fc6fbaf8a",
+        "env": "prod",
+        "x": 630,
+        "y": 420,
+        "wires": [
+            [
+                "6c0d0c8e561aac1e"
+            ]
+        ]
+    },
+    {
+        "id": "d0fa79cf27532328",
         "type": "inject",
-        "z": "e1d8d9e2d4ab24bd",
+        "z": "6c9177d9d57832c1",
         "name": "",
         "props": [
             {
@@ -41,78 +79,18 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 480,
-        "y": 480,
+        "x": 440,
+        "y": 420,
         "wires": [
             [
-                "7525be1830413ab5"
+                "7535e1a6dbe784f4"
             ]
         ]
     },
     {
-        "id": "7525be1830413ab5",
-        "type": "getUserSubscriptions",
-        "z": "e1d8d9e2d4ab24bd",
-        "name": "",
-        "env": "staging",
-        "userConfiguration": "35914e5f0672250c",
-        "x": 730,
-        "y": 480,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "8bafb16eb8b151ad",
-        "type": "searchChannels",
-        "z": "e1d8d9e2d4ab24bd",
-        "name": "",
-        "query": "queryParam",
-        "env": "staging",
-        "page": 1,
-        "limit": "20",
-        "x": 740,
-        "y": 620,
-        "wires": [
-            [
-                "7e03aecfb2cfb00f"
-            ]
-        ]
-    },
-    {
-        "id": "ce75d9f1f051054b",
-        "type": "inject",
-        "z": "e1d8d9e2d4ab24bd",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "queryParam",
-                "v": "Push",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 480,
-        "y": 620,
-        "wires": [
-            [
-                "8bafb16eb8b151ad"
-            ]
-        ]
-    },
-    {
-        "id": "7e03aecfb2cfb00f",
+        "id": "6c0d0c8e561aac1e",
         "type": "debug",
-        "z": "e1d8d9e2d4ab24bd",
+        "z": "6c9177d9d57832c1",
         "name": "debug 1",
         "active": true,
         "tosidebar": true,
@@ -122,7 +100,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 960,
-        "y": 620,
+        "y": 420,
         "wires": []
     }
 ]

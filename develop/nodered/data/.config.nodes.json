@@ -447,7 +447,7 @@
             "PrivateKey": {
                 "name": "PrivateKey",
                 "types": [
-                    "privatekey"
+                    "privateKey"
                 ],
                 "enabled": true,
                 "local": false,
@@ -465,6 +465,17 @@
                 "user": false,
                 "module": "node-eth-configuration",
                 "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-configuration/nodes/ChainId.js"
+            },
+            "Provider2": {
+                "name": "Provider2",
+                "types": [
+                    "alchemy-config"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-eth-configuration",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-configuration/nodes/alchemy-config.js"
             }
         }
     },
@@ -506,6 +517,28 @@
                 "user": false,
                 "module": "node-eth-general",
                 "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-general/WriteContract.js"
+            },
+            "TransferEth": {
+                "name": "TransferEth",
+                "types": [
+                    "TransferEth"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-eth-general",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-general/TransferEth.js"
+            },
+            "alchemy-example": {
+                "name": "alchemy-example",
+                "types": [
+                    "alchemy-example"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-eth-general",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-general/alchemy-example.js"
             }
         }
     },
@@ -525,6 +558,17 @@
                 "user": false,
                 "module": "node-eth-push",
                 "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-push/nodes/config/userConfiguration.js"
+            },
+            "signerConfiguration": {
+                "name": "signerConfiguration",
+                "types": [
+                    "signerConfiguration"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-eth-push",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-push/nodes/config/signerConfiguration.js"
             },
             "getNotification": {
                 "name": "getNotification",
@@ -582,6 +626,135 @@
                 "user": false,
                 "module": "node-eth-push",
                 "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-push/nodes/channel/searchChannels.js"
+            },
+            "opt": {
+                "name": "opt",
+                "types": [
+                    "opt-node"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-eth-push",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-push/nodes/opt/opt.js"
+            }
+        }
+    },
+    "@andreashauschild/node-red-contrib-ethers-node": {
+        "name": "@andreashauschild/node-red-contrib-ethers-node",
+        "version": "0.0.29",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "transfer": {
+                "name": "transfer",
+                "types": [
+                    "ethers-transfer"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "@andreashauschild/node-red-contrib-ethers-node",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/develop/nodered/data/node_modules/@andreashauschild/node-red-contrib-ethers-node/nodes/ethers-transfer.js"
+            },
+            "ethers-credentials": {
+                "name": "ethers-credentials",
+                "types": [
+                    "ethers-credentials"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "@andreashauschild/node-red-contrib-ethers-node",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/develop/nodered/data/node_modules/@andreashauschild/node-red-contrib-ethers-node/nodes/ethers-credentials.js"
+            },
+            "ethers-rpc": {
+                "name": "ethers-rpc",
+                "types": [
+                    "ethers-rpc"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "@andreashauschild/node-red-contrib-ethers-node",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/develop/nodered/data/node_modules/@andreashauschild/node-red-contrib-ethers-node/nodes/ethers-rpc.js"
+            },
+            "ethers-deploy": {
+                "name": "ethers-deploy",
+                "types": [
+                    "ethers-deploy"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "@andreashauschild/node-red-contrib-ethers-node",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/develop/nodered/data/node_modules/@andreashauschild/node-red-contrib-ethers-node/nodes/ethers-deploy.js"
+            },
+            "ethers-contract": {
+                "name": "ethers-contract",
+                "types": [
+                    "ethers-contract"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "@andreashauschild/node-red-contrib-ethers-node",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/develop/nodered/data/node_modules/@andreashauschild/node-red-contrib-ethers-node/nodes/ethers-contract.js"
+            },
+            "ethers-write-contract": {
+                "name": "ethers-write-contract",
+                "types": [
+                    "ethers-write-contract"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "@andreashauschild/node-red-contrib-ethers-node",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/develop/nodered/data/node_modules/@andreashauschild/node-red-contrib-ethers-node/nodes/ethers-write-contract.js"
+            },
+            "ethers-read-contract": {
+                "name": "ethers-read-contract",
+                "types": [
+                    "ethers-read-contract"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "@andreashauschild/node-red-contrib-ethers-node",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/develop/nodered/data/node_modules/@andreashauschild/node-red-contrib-ethers-node/nodes/ethers-read-contract.js"
+            },
+            "ethers-read-account": {
+                "name": "ethers-read-account",
+                "types": [
+                    "ethers-read-account"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "@andreashauschild/node-red-contrib-ethers-node",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/develop/nodered/data/node_modules/@andreashauschild/node-red-contrib-ethers-node/nodes/ethers-read-account.js"
+            },
+            "ethers-events": {
+                "name": "ethers-events",
+                "types": [
+                    "ethers-events"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "@andreashauschild/node-red-contrib-ethers-node",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/develop/nodered/data/node_modules/@andreashauschild/node-red-contrib-ethers-node/nodes/ethers-events.js"
+            },
+            "ethers-provider": {
+                "name": "ethers-provider",
+                "types": [
+                    "ethers-provider"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "@andreashauschild/node-red-contrib-ethers-node",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/develop/nodered/data/node_modules/@andreashauschild/node-red-contrib-ethers-node/nodes/ethers-provider.js"
             }
         }
     }
