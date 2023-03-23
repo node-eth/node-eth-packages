@@ -10,7 +10,7 @@
       "Provider": "nodes/Provider.js",
       "PrivateKey": "nodes/PrivateKey.js",
       "ChainId": "nodes/ChainId.js",
-      "Provider2":"nodes/alchemy-config.js"
+      "rpc":"nodes/rpc.js"
     }
   },
   "author": "",
