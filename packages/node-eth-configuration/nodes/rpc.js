@@ -1,10 +1,15 @@
+
 module.exports = function (RED) {
-    function RpcConfigNode(config) {
-      RED.nodes.createNode(this, config);
-      this.name = config.name;
-      this.rpc = config.rpc;
-    }
-  
-    RED.nodes.registerType('rpc', RpcConfigNode);
+  const {ethers }= require('ethers');
+
+  function RpcConfigNode(n) {
+    RED.nodes.createNode(this, n);
+    this.name = n.name;
+    this.rpc = n.rpc;
+    const rpcUrl = n.rpc;
+    const provider = new ethers.JsonRpcProvider(rpcUrl)
+    this.provider = provider;
+  }
+
+  RED.nodes.registerType('rpc', RpcConfigNode);
 };
-  

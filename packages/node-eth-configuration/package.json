@@ -8,11 +8,16 @@
     "nodes": {
       "Contract": "nodes/Contract.js",
       "Provider": "nodes/Provider.js",
-      "PrivateKey": "nodes/PrivateKey.js",
       "ChainId": "nodes/ChainId.js",
-      "rpc":"nodes/rpc.js"
+      "PrivateKey": "nodes/PrivateKey.js",
+      "rpc": "nodes/rpc.js",
+      "userConfiguration": "nodes/userConfiguration.js",
+      "signerConfiguration": "nodes/signerConfiguration.js"
     }
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "ethers": "6.1.0"
+  }
 }

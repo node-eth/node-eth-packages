@@ -14,9 +14,11 @@ module.exports = function (RED) {
   
       this.on("input", async function (msg, send, log) {
         node.status({ fill: "yellow", shape: "ring", text: "working on it..." });
+        const queryParams = RED.util.evaluateNodeProperty(config.query, config.queryType || "str", node, msg)
+        node.log(queryParams);
         pushService
             .searchForChannel(
-                this.query,
+                queryParams,
                 this.env,
                 this.page,
                 this.limit

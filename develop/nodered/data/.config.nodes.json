@@ -444,17 +444,6 @@
                 "module": "node-eth-configuration",
                 "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-configuration/nodes/Provider.js"
             },
-            "PrivateKey": {
-                "name": "PrivateKey",
-                "types": [
-                    "privateKey"
-                ],
-                "enabled": true,
-                "local": false,
-                "user": false,
-                "module": "node-eth-configuration",
-                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-configuration/nodes/PrivateKey.js"
-            },
             "ChainId": {
                 "name": "ChainId",
                 "types": [
@@ -466,16 +455,49 @@
                 "module": "node-eth-configuration",
                 "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-configuration/nodes/ChainId.js"
             },
-            "Provider2": {
-                "name": "Provider2",
+            "PrivateKey": {
+                "name": "PrivateKey",
                 "types": [
-                    "alchemy-config"
+                    "privateKey"
                 ],
                 "enabled": true,
                 "local": false,
                 "user": false,
                 "module": "node-eth-configuration",
-                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-configuration/nodes/alchemy-config.js"
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-configuration/nodes/PrivateKey.js"
+            },
+            "rpc": {
+                "name": "rpc",
+                "types": [
+                    "rpc"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-eth-configuration",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-configuration/nodes/rpc.js"
+            },
+            "userConfiguration": {
+                "name": "userConfiguration",
+                "types": [
+                    "userConfiguration"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-eth-configuration",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-configuration/nodes/userConfiguration.js"
+            },
+            "signerConfiguration": {
+                "name": "signerConfiguration",
+                "types": [
+                    "signerConfiguration"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-eth-configuration",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-configuration/nodes/signerConfiguration.js"
             }
         }
     },
@@ -488,57 +510,68 @@
             "GetContractBalance": {
                 "name": "GetContractBalance",
                 "types": [
-                    "GetContractBalance"
+                    "Get-Contract-Balance"
                 ],
                 "enabled": true,
                 "local": false,
                 "user": false,
                 "module": "node-eth-general",
-                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-general/GetContractBalance.js"
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-general/nodes/GetContractBalance.js"
             },
             "ReadContract": {
                 "name": "ReadContract",
                 "types": [
-                    "ReadContract"
+                    "Read-Contract"
                 ],
                 "enabled": true,
                 "local": false,
                 "user": false,
                 "module": "node-eth-general",
-                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-general/ReadContract.js"
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-general/nodes/ReadContract.js"
             },
             "WriteContract": {
                 "name": "WriteContract",
                 "types": [
-                    "WriteContract"
+                    "Write-Contract"
                 ],
                 "enabled": true,
                 "local": false,
                 "user": false,
                 "module": "node-eth-general",
-                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-general/WriteContract.js"
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-general/nodes/WriteContract.js"
             },
-            "TransferEth": {
-                "name": "TransferEth",
+            "Transfer": {
+                "name": "Transfer",
                 "types": [
-                    "TransferEth"
+                    "Transfer"
                 ],
                 "enabled": true,
                 "local": false,
                 "user": false,
                 "module": "node-eth-general",
-                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-general/TransferEth.js"
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-general/nodes/Transfer.js"
             },
-            "alchemy-example": {
-                "name": "alchemy-example",
+            "ReadAccount": {
+                "name": "ReadAccount",
                 "types": [
-                    "alchemy-example"
+                    "Read-Account"
                 ],
                 "enabled": true,
                 "local": false,
                 "user": false,
                 "module": "node-eth-general",
-                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-general/alchemy-example.js"
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-general/nodes/ReadAccount.js"
+            },
+            "ConfigureProviders": {
+                "name": "ConfigureProviders",
+                "types": [
+                    "Configure-Providers"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-eth-general",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-general/nodes/ConfigureProviders.js"
             }
         }
     },
@@ -548,28 +581,6 @@
         "local": false,
         "user": false,
         "nodes": {
-            "userConfiguration": {
-                "name": "userConfiguration",
-                "types": [
-                    "userConfiguration"
-                ],
-                "enabled": true,
-                "local": false,
-                "user": false,
-                "module": "node-eth-push",
-                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-push/nodes/config/userConfiguration.js"
-            },
-            "signerConfiguration": {
-                "name": "signerConfiguration",
-                "types": [
-                    "signerConfiguration"
-                ],
-                "enabled": true,
-                "local": false,
-                "user": false,
-                "module": "node-eth-push",
-                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-push/nodes/config/signerConfiguration.js"
-            },
             "getNotification": {
                 "name": "getNotification",
                 "types": [

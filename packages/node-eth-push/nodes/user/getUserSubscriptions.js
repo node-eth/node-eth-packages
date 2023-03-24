@@ -10,7 +10,6 @@ module.exports = function(RED) {
 
     const pushService = new PushService(node);
 
-
     this.on("input", async function (msg, send, log) {
       node.status({ fill: "yellow", shape: "ring", text: "working on it..." });
       pushService

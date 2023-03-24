@@ -172,6 +172,8 @@ module.exports = class PushService {
 
   // #region Subscribe to a Channel
   /**
+   * Dev Note* - Lets have subscribe and unsubscribe sepparated for now, we can merge them later on
+   * 
    * This method returns whether or not the subscription was successful, meaning if user failed to subscribe
    * because he was already subscribed, the promise will still get resolved. Only exception is the
    * method failing to execute the .subscribe call
@@ -181,11 +183,9 @@ module.exports = class PushService {
    * @param {Wallet} _signer - ethers signer instance ethers.Wallet(Private_Key)
    * @param {String[prod | staging | dev]} env - API environment
    * 
-   * @returns {Boolean} - whether or not the subscription was sucessful
+   * @returns {Boolean} - whether or not the subscription was sucessful (Boolean)
    */
-  async subscribeToChannel(channelCaipAddress, userCaipAddress, _signer, _env, _method) {
-    const method = _method; 
-
+  async subscribeToChannel(channelCaipAddress, userCaipAddress, _signer, _env) {
     try { 
       await PushAPI.channels.subscribe({
         signer: _signer,
@@ -208,10 +208,38 @@ module.exports = class PushService {
   }
   // #endregion  
 
-  // TODO - unsubscribe
-  async unsubscribeFromChannel() {
-    
+  // #region Unsubscribe from a Channel
+  /**
+   * 
+   * @param {String} channelCaipAddress - address of the channel this action is directed to
+   * @param {String} userCaipAddress - address of the user performing the action in CAIP
+   * @param {Wallet} _signer - ethers signer instance ethers.Wallet(Private_Key)
+   * @param {String[prod | staging | dev]} env - API environment
+   * 
+   * @returns {Boolean} - whether or not the unsubscribe was sucessful (Boolean)
+   */
+  async unsubscribeFromChannel(channelCaipAddress, userCaipAddress, _signer, _env) {
+    try { 
+      await PushAPI.channels.unsubscribe({
+        signer: _signer,
+        channelAddress: channelCaipAddress, // channel address in CAIP
+        userAddress: userCaipAddress, // user address in CAIP
+        onSuccess: () => {
+         console.log('Successfully opted out'); 
+         Promise.resolve(true)
+        },
+        onError: (err) => {
+          console.error('Failed to opt out');
+          console.error(err)
+          Promise.resolve(false)
+        },
+        env: _env
+      })
+    } catch(error) {
+      return Promise.reject("Push Service: Error while subscribing to the channel: " + error)
+    }
   }
+  // #endregion
 
   // TODO - send notification
 };

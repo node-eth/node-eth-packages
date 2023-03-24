@@ -1,24 +1,46 @@
+<!DOCTYPE html>
 <script type="text/javascript">
   RED.nodes.registerType('rpc', {
     category: 'config',
     defaults: {
       name: { value: '' },
-      rpc: { value: '' },
+      rpc: { value: '', required: true },
     },
     label: function () {
-      return this.name || 'RPC Configuration';
+      return this.name || 'RPC';
     },
     oneditprepare: function () {
-      const rpcSelect = $('#node-input-rpc-select');
-      const rpcInput = $('#node-config-input-rpc');
+      const rpcPresets = [
+        {
+          name: 'Alchemy - Ethereum goerli',
+          url: 'https://eth-goerli.g.alchemy.com/v2/lWjLf8hmkz3yFAl3KzY0pNPNKg4IkaSD',
+        },
+        {
+          name: 'Alchemy - Ethereum mainnet',
+          url: 'https://eth-mainnet.g.alchemy.com/v2/R_yCyvqYqaX_7f7yTMDoTEXQrLp0dHri',
+        },
+        {
+          name: 'Alchemy - Polygon mainnet',
+          url: 'https://polygon-mainnet.g.alchemy.com/v2/ICVtU2cGKBMuoLJsMUetKMD8GBIKaC6k',
+        },
+      ];
 
-      rpcSelect.change(function () {
-        if (rpcSelect.val() === 'custom') {
-          rpcInput.prop('disabled', false);
-        } else {
-          rpcInput.prop('disabled', true);
-          rpcInput.val('');
-        }
+      const selectPreset = document.getElementById('node-config-input-select-preset');
+      rpcPresets.forEach((preset) => {
+        const option = document.createElement('option');
+        option.text = preset.name;
+        option.value = preset.url;
+        selectPreset.add(option);
+      });
+
+      selectPreset.addEventListener('change', function () {
+        if (this.value) {
+      if (this.value === 'custom') {
+        $('#node-config-input-rpc').val('');
+      } else {
+        $('#node-config-input-rpc').val(this.value);
+      }
+    }
       });
     },
   });
@@ -26,29 +48,29 @@
 
 <script type="text/html" data-template-name="rpc">
   <div class="form-row">
-    <label for="node-config-input-name"><i class="icon-tag"></i> Name</label>
+    <label for="node-config-input-name">Name</label>
     <input type="text" id="node-config-input-name" placeholder="Name">
   </div>
   <div class="form-row">
-    <label for="node-input-rpc-select">RPC</label>
-    <select id="node-input-rpc-select">
-        <option value="https://eth-mainnet.g.alchemy.com/v2/R_yCyvqYqaX_7f7yTMDoTEXQrLp0dHri">Alchemy - Ethereum Mainnet</option>
-        <option value="https://eth-goerli.g.alchemy.com/v2/lWjLf8hmkz3yFAl3KzY0pNPNKg4IkaSD">Alchemy - Ethereum Goerli</option>
-        <option value="https://polygon-mainnet.g.alchemy.com/v2/ICVtU2cGKBMuoLJsMUetKMD8GBIKaC6k">Alchemy - Polygon Mainnet</option>
-        <option value="custom">Custom</option>
-    </select>
+    <label for="node-config-input-rpc">RPC</label>
+    <input type="text" id="node-config-input-rpc" style="width: 70%;" placeholder="RPC URL">
   </div>
   <div class="form-row">
-    <label for="node-config-input-rpc">Custom RPC</label>
-    <input type="text" id="node-config-input-rpc" placeholder="https://eth-mainnet.g.alchemy.com/v2/your-api-key" disabled>
-  </div>
-  <div class="form-tips">
-    <span>NodeETH provides you with major RPCs but we <b>highly recommend</b> that you use your own RPCs.</span>
+    <label for="node-config-input-select-preset">Preset</label>
+    <select id="node-config-input-select-preset">
+      <option value="">-- Choose a preset --</option>
+      <option value="custom">CUSTOM</option>
+    </select>
   </div>
 </script>
 
 <script type="text/html" data-help-name="rpc">
   <p>
-    The RPC Configuration node stores the RPC configurations. Users can either select from the built-in RPC configurations provided by the NodeETH or provide their own custom RPC.
+    The RPC Configuration node stores the RPC endpoint URL for Ethereum nodes.
   </p>
-</script> 
+  <p>
+    Users can choose from built-in presets or provide their own RPC URL.
+  </p>
+</script>
+
+

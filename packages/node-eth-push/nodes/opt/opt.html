@@ -5,15 +5,15 @@
         icon: "font-awesome/fa-bell",
         defaults: {
             name: { value: "", required: false },
-            method: { value: "opt-in", required: true },
-            channel: { type: "userConfiguration", required: true },
-            user: { type: "signerConfiguration", required: true },
             env: { value: "prod", required: true },
+            method: { value: "opt-in", required: true },
+            userConfiguration: { type: "userConfiguration", required: true },
+            signerConfiguration: { type: "signerConfiguration", required: true },
         },
         inputs: 1,
         outputs: 1,
         label: function () {
-                    return `${this.name}` || "Signer Config";
+                    return `${this.name}` || "Opt in or out";
         },
         oneditprepare: function () {
             $("#node-input-env").typedInput({
@@ -56,15 +56,15 @@
         <input type="text" id="node-input-method" />
     </div>
     <div class="form-row">
-        <label for="node-input-channel">Channel</label>
-        <input type="text" id="node-input-channel" />
+        <label for="node-input-userConfiguration">Channel</label>
+        <input type="text" id="node-input-userConfiguration" />
     </div>
     <div class="form-row">
-        <label for="node-input-user">User</label>
-        <input type="text" id="node-input-user" />
+        <label for="node-input-signerConfiguration">User</label>
+        <input type="text" id="node-input-signerConfiguration" />
     </div>
-    <div>
-    </div>
+    
+    <br>
     <div class="form-tips">
         <span>This action requires the user to operate as a <b>signer</b>, signing the message while opting in/out.</span>
     </div>
