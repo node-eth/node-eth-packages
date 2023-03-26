@@ -774,5 +774,68 @@
                 "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-polygon/nodes/PolyReadAccount.js"
             }
         }
+    },
+    "node-eth-optimism": {
+        "name": "node-eth-optimism",
+        "version": "1.0.0",
+        "local": false,
+        "user": false,
+        "nodes": {
+            "OptiGetContractBalance": {
+                "name": "OptiGetContractBalance",
+                "types": [
+                    "Optimism-Contract-Balance"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-eth-optimism",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-optimism/nodes/OptiGetContractBalance.js"
+            },
+            "OptiReadContract": {
+                "name": "OptiReadContract",
+                "types": [
+                    "Optimism-Read-Contract"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-eth-optimism",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-optimism/nodes/OptiReadContract.js"
+            },
+            "OptiWriteContract": {
+                "name": "OptiWriteContract",
+                "types": [
+                    "Optimism-Write-Contract"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-eth-optimism",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-optimism/nodes/OptiWriteContract.js"
+            },
+            "OptiTransfer": {
+                "name": "OptiTransfer",
+                "types": [
+                    "Optimism-Transfer"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-eth-optimism",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-optimism/nodes/OptiTransfer.js"
+            },
+            "OptiReadAccount": {
+                "name": "OptiReadAccount",
+                "types": [
+                    "Optimism-Read-Account"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-eth-optimism",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-optimism/nodes/OptiReadAccount.js"
+            }
+        }
     }
 }

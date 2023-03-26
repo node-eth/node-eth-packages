@@ -1010,9 +1010,6 @@
     mcl-wasm "^0.7.1"
     rustbn.js "~0.2.0"
 
-"@nomicfoundation/solidity-analyzer-linux-x64-gnu@0.1.1":
-  version "0.1.1"
-
 "@nomicfoundation/solidity-analyzer@^0.1.0":
   version "0.1.1"
   optionalDependencies:
@@ -2985,7 +2982,7 @@ hardhat@^2.13.0:
     uuid "^8.3.2"
     ws "^7.4.6"
 
-"hardhat@file:/home/luka/Projects/node-eth/node-eth-packages/packages/hardhat":
+"hardhat@file:C:\\Users\\lukar\\Desktop\\nodeeth\\packages\\hardhat":
   resolved "file:packages/hardhat"
   dependencies:
     hardhat "^2.13.0"
@@ -3813,43 +3810,43 @@ nice-try@^1.0.4:
 node-addon-api@^2.0.0:
   version "2.0.2"
 
-"node-eth-bridge@file:/home/luka/Projects/node-eth/node-eth-packages/packages/node-eth-bridge":
+"node-eth-bridge@file:C:\\Users\\lukar\\Desktop\\nodeeth\\packages\\node-eth-bridge":
   resolved "file:packages/node-eth-bridge"
   dependencies:
     "@hop-protocol/sdk" "^0.0.1-beta.441"
     ethers "5.7.2"
 
-"node-eth-configuration@file:/home/luka/Projects/node-eth/node-eth-packages/packages/node-eth-configuration":
+"node-eth-configuration@file:C:\\Users\\lukar\\Desktop\\nodeeth\\packages\\node-eth-configuration":
   version "1.0.0"
   resolved "file:packages/node-eth-configuration"
   dependencies:
     ethers "6.1.0"
 
-"node-eth-ethereum@file:/home/luka/Projects/node-eth/node-eth-packages/packages/node-eth-ethereum":
+"node-eth-ethereum@file:C:\\Users\\lukar\\Desktop\\nodeeth\\packages\\node-eth-ethereum":
   version "1.0.0"
   resolved "file:packages/node-eth-ethereum"
   dependencies:
     ethers "6.1.0"
 
-"node-eth-general@file:/home/luka/Projects/node-eth/node-eth-packages/packages/node-eth-general":
+"node-eth-general@file:C:\\Users\\lukar\\Desktop\\nodeeth\\packages\\node-eth-general":
   version "1.0.0"
   resolved "file:packages/node-eth-general"
   dependencies:
     ethers "6.1.0"
 
-"node-eth-optimism@file:/home/luka/Projects/node-eth/node-eth-packages/packages/node-eth-optimism":
+"node-eth-optimism@file:C:\\Users\\lukar\\Desktop\\nodeeth\\packages\\node-eth-optimism":
   version "1.0.0"
   resolved "file:packages/node-eth-optimism"
   dependencies:
     ethers "6.1.0"
 
-"node-eth-polygon@file:/home/luka/Projects/node-eth/node-eth-packages/packages/node-eth-polygon":
+"node-eth-polygon@file:C:\\Users\\lukar\\Desktop\\nodeeth\\packages\\node-eth-polygon":
   version "1.0.0"
   resolved "file:packages/node-eth-polygon"
   dependencies:
     ethers "6.1.0"
 
-"node-eth-push@file:/home/luka/Projects/node-eth/node-eth-packages/packages/node-eth-push":
+"node-eth-push@file:C:\\Users\\lukar\\Desktop\\nodeeth\\packages\\node-eth-push":
   version "1.0.0"
   resolved "file:packages/node-eth-push"
   dependencies:
