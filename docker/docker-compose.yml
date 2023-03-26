@@ -15,13 +15,13 @@ services:
     ports:
       - "8545:8545"
 
-  nodered:
-    depends_on:
-        - hardhat
-    image: nodered/node-red:latest
-    environment:
-        - TZ=America/Los_Angeles
-    ports:
-        - "1880:1880"
-    volumes:
-        - ./nodered-storage:/data
+  # nodered:
+  #   depends_on:
+  #       - hardhat
+  #   image: nodered/node-red:latest
+  #   environment:
+  #       - TZ=America/Los_Angeles
+  #   ports:
+  #       - "1880:1880"
+  #   volumes:
+  #       - ./nodered-storage:/data

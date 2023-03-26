@@ -6,8 +6,12 @@ module.exports = function (RED) {
 
     var node = this;
     this.userConfiguration = RED.nodes.getNode(config.userConfiguration);
-    this.env = config.env;
+    this.privateKey = RED.nodes.getNode(config.privateKey);
 
+    this.env = config.env;
+    console.log("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb")
+    console.log(this.userConfiguration)
+    console.log(this.privateKey)
     const pushService = new PushService(node);
 
     this.on("input", async function (msg, send, log) {

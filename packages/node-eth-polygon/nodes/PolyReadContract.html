@@ -1,0 +1,123 @@
+<script type='text/javascript'>
+  // parse the abi and pull out the read only functions then make options for them
+  function updateReadFrom(node, RED) {
+    const select = $("#node-input-readFrom");
+    select.empty();
+    const inputName = $("#node-input-contract").val();
+    const contractConfigNode = RED.nodes.node(inputName);
+    if (contractConfigNode && contractConfigNode.abi) {
+      const parsedData = JSON.parse(contractConfigNode.abi);
+      parsedData.forEach(item => {
+        if (item.name && item.constant || item.name && item.stateMutability == "view" || item.name && item.stateMutability == "pure") {
+          const option = $("<option>");
+          option.val(item.name);
+          option.text(item.name);
+          select.append(option);
+        }
+      });
+    }
+  }
+
+  // if the read function takes args then create an input for them
+  function updateFunctionInputs(node, RED) {
+    const functionName = $("#node-input-readFrom").val();
+    const cName = $("#node-input-contract").val();
+    const contractConfigNode = RED.nodes.node(cName);
+    const inputsContainer = $("#function-inputs");
+    inputsContainer.empty();
+
+    if (contractConfigNode && contractConfigNode.abi) {
+      const parsedData = JSON.parse(contractConfigNode.abi);
+      const selectedFunction = parsedData.find(item => item.name === functionName && item.constant);
+
+      if (selectedFunction && selectedFunction.inputs) {
+        selectedFunction.inputs.forEach(input => {
+          const inputRow = $("<div>").addClass("form-row");
+          const label = $("<label>").text("Input: " + (input.name || input.type));
+          const inputField = $("<input>").attr("type", "text").attr("id", "function-input-" + input.name).addClass("function-input");
+          inputRow.append(label, inputField);
+          inputsContainer.append(inputRow);
+        });
+      }
+    }
+  }
+
+  RED.nodes.registerType('Polygon-Read-Contract', {
+    category: 'Polygon nodes',
+    defaults: {
+      name: {value: "", required: true},
+      contract: {type: "contract", required: true},
+      rpc: {type: "rpc", required: true},
+      readFrom: {value: "", required: true},
+      functionInputs: { value: [] }
+    },
+    inputs: 1,
+    outputs: 1,
+    label: function () {
+      return this.name;
+    },
+    color: '#cfb8f5',
+    icon: 'polygon-logo.svg',
+    paletteLabel: 'Polygon-Read-Account',
+    oneditprepare: function () {
+      const node = this;
+      
+      updateReadFrom(node, RED); // Update the Read From dropdown initially
+      updateFunctionInputs(node, RED); // Update the function inputs initially
+      
+      $("#node-input-contract").off('change').on('change', function() {
+        updateReadFrom(node, RED); // Update the Read From dropdown when the contract selection changes
+        updateFunctionInputs(node, RED); // Update the function inputs when the contract selection changes
+      });
+
+      $("#node-input-readFrom").off('change').on('change', function() {
+        updateFunctionInputs(node, RED); // Update the function inputs when the Read From selection changes
+      });
+    },
+    oneditsave: function () {
+      const inputName = $("#node-input-contract").val();
+      const contractConfigNode = RED.nodes.node(inputName);
+      const functionName = $("#node-input-readFrom").val();
+      const parsedData = JSON.parse(contractConfigNode.abi);
+      const selectedFunction = parsedData.find(
+        (item) => item.name === functionName
+      );
+
+      if (selectedFunction && selectedFunction.inputs) {
+        this.functionInputs = selectedFunction.inputs.map((input) => {
+          const inputId = "function-input-" + input.name;
+          return {
+            name: input.name,
+            type: input.type,
+            value: $("#" + inputId).val(),
+          };
+        });
+      }
+    },
+  });
+</script>
+
+<script type="text/html" data-template-name="Polygon-Read-Contract">
+  <div class="form-row">
+      <label for="node-input-name">Name</label>
+      <input type="text" id="node-input-name">
+  </div>
+  <div class="form-row">
+      <label for="node-input-contract">Contract</label>
+      <select type="text" id="node-input-contract"></select>
+  </div>
+  <div class="form-row">
+      <label for="node-input-rpc">Provider</label>
+      <input type="text" id="node-input-rpc">
+  </div>
+  <div class="form-row">
+    <label for="node-input-readFrom">Read From</label>
+    <select id="node-input-readFrom"></select>
+  </div>
+  <div class="form-row" id="function-inputs">
+  </div>
+</script>
+
+<script type="text/markdown" data-help-name="Polygon-Read-Contract">
+  A node to read from a deployed polygon smart contract.
+</script>

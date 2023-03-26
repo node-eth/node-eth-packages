@@ -1,6 +1,6 @@
 [
     {
-        "id": "83d6624587c5817e",
+        "id": "281cfee0f3c62848",
         "type": "tab",
         "label": "Flow 1",
         "disabled": false,
@@ -8,38 +8,27 @@
         "env": []
     },
     {
-        "id": "7273a2ced84609a1",
-        "type": "chainId",
-        "name": "5chain",
-        "chainName": "idk",
-        "chainId": "5"
+        "id": "dd4a02813312c9ac",
+        "type": "rpc",
+        "name": "goerli provider",
+        "rpc": "https://eth-goerli.g.alchemy.com/v2/lWjLf8hmkz3yFAl3KzY0pNPNKg4IkaSD"
     },
     {
-        "id": "36658484fdc421e2",
-        "type": "userConfiguration",
-        "address": "0xD8634C39BBFd4033c0d3289C4515275102423681",
-        "chainId": "7273a2ced84609a1"
+        "id": "69293f859f9a87b5",
+        "type": "privateKey",
+        "name": "Account #1",
+        "key": "0xf85fa1dbcd1f5ec53d1a4eda7ed40d917498227600fdf6d86b30582c231d7a86"
     },
     {
-        "id": "51d02266e3cec93e",
-        "type": "getNotification",
-        "z": "83d6624587c5817e",
-        "name": "getnotif",
-        "env": "staging",
-        "spam": "false",
-        "userConfiguration": "36658484fdc421e2",
-        "x": 540,
-        "y": 580,
-        "wires": [
-            [
-                "8bc2825e1de0ccb3"
-            ]
-        ]
+        "id": "ffdc48e7f2df21eb",
+        "type": "privateKey",
+        "name": "Account #2",
+        "key": "ddb2d2d9ab5b3507d75812aa93c826b189240abc82212351eb32db7bcc6f60dd"
     },
     {
-        "id": "50bc78ab992dd837",
+        "id": "c6e9a0cfe975f0b7",
         "type": "inject",
-        "z": "83d6624587c5817e",
+        "z": "281cfee0f3c62848",
         "name": "",
         "props": [
             {
@@ -51,24 +40,24 @@
             }
         ],
         "repeat": "",
-        "crontab": "",
+        "crontab": "00 12 * * *",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 320,
-        "y": 580,
+        "x": 250,
+        "y": 240,
         "wires": [
             [
-                "51d02266e3cec93e"
+                "5dad2299cfb91b83"
             ]
         ]
     },
     {
-        "id": "8bc2825e1de0ccb3",
+        "id": "c7e9c5b74fdaa57b",
         "type": "debug",
-        "z": "83d6624587c5817e",
+        "z": "281cfee0f3c62848",
         "name": "debug 1",
         "active": true,
         "tosidebar": true,
@@ -77,190 +66,62 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 740,
-        "y": 580,
+        "x": 960,
+        "y": 240,
         "wires": []
     },
     {
-        "id": "48c65682eabf4352",
-        "type": "getUserSubscriptions",
-        "z": "83d6624587c5817e",
-        "name": "subscriptions",
-        "env": "staging",
-        "userConfiguration": "36658484fdc421e2",
-        "x": 550,
-        "y": 520,
+        "id": "5dad2299cfb91b83",
+        "type": "Ethereum-Transfer",
+        "z": "281cfee0f3c62848",
+        "name": "pay Ben",
+        "rpc": "dd4a02813312c9ac",
+        "privateKey": "69293f859f9a87b5",
+        "recipientAddress": "0x6d569AA9965a9713332646770274739b90f817cf",
+        "recipientAddressType": "str",
+        "etherAmount": "0.05",
+        "etherAmountType": "str",
+        "x": 400,
+        "y": 240,
         "wires": [
             [
-                "0c4a0b70b638e8c5"
+                "07eea90d961f248f",
+                "4567c69a07d92d25"
             ]
         ]
     },
     {
-        "id": "f0196b5d9303736d",
-        "type": "inject",
-        "z": "83d6624587c5817e",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 320,
-        "y": 520,
+        "id": "07eea90d961f248f",
+        "type": "Ethereum-Read-Account",
+        "z": "281cfee0f3c62848",
+        "name": "#2",
+        "rpc": "dd4a02813312c9ac",
+        "action": "getBalance",
+        "account": "0x6d569AA9965a9713332646770274739b90f817cf",
+        "accountType": "str",
+        "x": 650,
+        "y": 180,
         "wires": [
             [
-                "48c65682eabf4352"
+                "c7e9c5b74fdaa57b"
             ]
         ]
     },
     {
-        "id": "0c4a0b70b638e8c5",
-        "type": "debug",
-        "z": "83d6624587c5817e",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 740,
-        "y": 520,
-        "wires": []
-    },
-    {
-        "id": "326847cec5752740",
-        "type": "getChannelDetails",
-        "z": "83d6624587c5817e",
-        "name": "",
-        "env": "staging",
-        "userConfiguration": "36658484fdc421e2",
-        "x": 520,
-        "y": 660,
+        "id": "4567c69a07d92d25",
+        "type": "Ethereum-Read-Account",
+        "z": "281cfee0f3c62848",
+        "name": "#1",
+        "rpc": "dd4a02813312c9ac",
+        "action": "getBalance",
+        "account": "0x909bD74ff56d6602102Ab5F03C7c7AE8562aCd62",
+        "accountType": "str",
+        "x": 650,
+        "y": 300,
         "wires": [
             [
-                "fca531d6de28f90f"
+                "c7e9c5b74fdaa57b"
             ]
         ]
-    },
-    {
-        "id": "099831d589994b51",
-        "type": "inject",
-        "z": "83d6624587c5817e",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 320,
-        "y": 660,
-        "wires": [
-            [
-                "326847cec5752740"
-            ]
-        ]
-    },
-    {
-        "id": "fca531d6de28f90f",
-        "type": "debug",
-        "z": "83d6624587c5817e",
-        "name": "debug 3",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 740,
-        "y": 660,
-        "wires": []
-    },
-    {
-        "id": "904f45f331a1a00e",
-        "type": "getChannelSubscribers",
-        "z": "83d6624587c5817e",
-        "name": "Channel Subscribers",
-        "env": "prod",
-        "userConfiguration": "36658484fdc421e2",
-        "page": 1,
-        "limit": 10,
-        "x": 540,
-        "y": 720,
-        "wires": [
-            [
-                "9a7113b6512f79bf"
-            ]
-        ]
-    },
-    {
-        "id": "70fd01f69d2a6762",
-        "type": "inject",
-        "z": "83d6624587c5817e",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 320,
-        "y": 720,
-        "wires": [
-            [
-                "904f45f331a1a00e"
-            ]
-        ]
-    },
-    {
-        "id": "9a7113b6512f79bf",
-        "type": "debug",
-        "z": "83d6624587c5817e",
-        "name": "debug 4",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 760,
-        "y": 720,
-        "wires": []
     }
 ]

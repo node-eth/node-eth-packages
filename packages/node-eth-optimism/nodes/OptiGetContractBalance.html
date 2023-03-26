@@ -1,0 +1,42 @@
+<script type='text/javascript'>
+  RED.nodes.registerType('Optimism-Contract-Balance', {
+    category: 'Optimism nodes',
+    defaults: {
+      name: {value: ""},
+      contract: {type: "contract", required: true},
+      privateKey: {type: "privateKey", required: true},
+      rpc: {type: "rpc", required: true},
+    },
+    inputs: 1,
+    outputs: 1,
+    label: function () {
+      return this.name
+    },
+    color: '#FFAAAA',
+    icon: 'Optimism-logo.svg',
+    paletteLabel: 'Optimism-Contract-Balance'
+  })
+</script>
+
+<script type="text/html" data-template-name="Optimism-Contract-Balance">
+  <div class="form-row">
+      <label for="node-input-name">Name</label>
+      <input type="text" id="node-input-name">
+  </div>
+  <div class="form-row">
+      <label for="node-input-contract">Contract</label>
+      <input type="text" id="node-input-contract">
+  </div>
+  <div class="form-row">
+      <label for="node-input-rpc">Provider</label>
+      <input type="text" id="node-input-rpc">
+  </div>
+  <div class="form-row">
+      <label for="node-input-privateKey">Private Key</label>
+      <input type="text" id="node-input-privateKey">
+  </div>
+</script>
+
+<script type="text/markdown" data-help-name="Optimism-Contract-Balance">
+  A node to get the balance of a deployed Optimism smart contract.
+</script>

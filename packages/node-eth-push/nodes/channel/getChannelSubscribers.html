@@ -1,42 +1,47 @@
 <script type="text/javascript">
-    RED.nodes.registerType("getChannelSubscribers", {
-      category: "Push Protocol",
-      color: "#f5b9f4",
-      icon: "font-awesome/fa-bell",
-      defaults: {
-        name: { value: "", required: false },
-        env: { value: "prod", required: true },
-        userConfiguration: { type: "userConfiguration", required: true },
-        page: { value: 1, required: false, validate:function(v) {
-            return v > 0;
-        }},
-        limit: {value: 10, required: false, validate:function(v) {
-            return v > 0 && v < 31
-        }}
+  RED.nodes.registerType("getChannelSubscribers", {
+    category: "Push Protocol",
+    color: "#f5b9f4",
+    icon: "font-awesome/fa-bell",
+    defaults: {
+      name: { value: "", required: false },
+      env: { value: "prod", required: true },
+      userConfiguration: { type: "userConfiguration", required: true },
+      page: {
+        value: 1, required: false, validate: function (v) {
+          return v > 0;
+        }
       },
-      inputs: 1,
-      outputs: 1,
-      label: function () {
-        return this.name || "Channel Subscribers";
-      },
-      oneditprepare: function () {
-        $("#node-input-env").typedInput({
-          types: [
-            {
-              value: "env",
-              options: [
-                { value: "prod", label: "Production (prod) - default" },
-                { value: "dev", label: "Development (dev)" },
-                { value: "staging", label: "Staging (staging)" },
-              ],
-            },
-          ],
-        });
-      },
-    });
-  </script>
-  
-  <script type="text/html" data-template-name="getChannelSubscribers">
+      limit: {
+        value: 10, required: false, validate: function (v) {
+          return v > 0 && v < 31
+        }
+      }
+    },
+    inputs: 1,
+    outputs: 1,
+    paletteLabel: 'Channel-Subscribers',
+    label: function () {
+      return this.name || "Channel Subscribers";
+    },
+    oneditprepare: function () {
+      $("#node-input-env").typedInput({
+        types: [
+          {
+            value: "env",
+            options: [
+              { value: "prod", label: "Production (prod) - default" },
+              { value: "dev", label: "Development (dev)" },
+              { value: "staging", label: "Staging (staging)" },
+            ],
+          },
+        ],
+      });
+    },
+  });
+</script>
+
+<script type="text/html" data-template-name="getChannelSubscribers">
       <div class="form-row">
           <label for="node-input-name">Name</label>
           <input type="text" id="node-input-name" />
@@ -63,6 +68,5 @@
             <span>Limit represents number of items in 1 page, greater than 0 and max 30 </span>
         </div>
   </script>
-  
-  <script type="text/markdown" data-help-name="getChannelSubscribers"></script>
-  
+
+<script type="text/markdown" data-help-name="getChannelSubscribers"></script>

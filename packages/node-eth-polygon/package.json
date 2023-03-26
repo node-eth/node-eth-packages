@@ -1,0 +1,21 @@
+{
+    "name": "node-eth-polygon",
+    "version": "1.0.0",
+    "description": "Polygon nodes for the node-eth project",
+    "main": "index.js",
+    "node-red": {
+        "version": ">=2.0.0",
+        "nodes": {
+            "PolyGetContractBalance": "nodes/PolyGetContractBalance.js",
+            "PolyReadContract": "nodes/PolyReadContract.js",
+            "PolyWriteContract": "nodes/PolyWriteContract.js",
+            "PolyTransfer": "nodes/PolyTransfer.js",
+            "PolyReadAccount": "nodes/PolyReadAccount.js"
+        }
+    },
+    "author": "Luka Radisavljevic",
+    "license": "ISC",
+    "dependencies": {
+        "ethers": "6.1.0"
+    }
+}

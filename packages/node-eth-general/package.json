@@ -6,12 +6,15 @@
   "node-red": {
     "version": ">=2.0.0",
     "nodes": {
-      "GetContractBalance": "GetContractBalance.js",
-      "ReadContract": "ReadContract.js",
-      "WriteContract": "WriteContract.js"
+      "GetContractBalance": "nodes/GetContractBalance.js",
+      "ReadContract": "nodes/ReadContract.js",
+      "WriteContract": "nodes/WriteContract.js",
+      "Transfer": "nodes/Transfer.js",
+      "ReadAccount": "nodes/ReadAccount.js",
+      "ConfigureProviders": "nodes/ConfigureProviders.js"
     }
   },
-  "author": "",
+  "author": "Ben Lazzeroni",
   "license": "ISC",
   "dependencies": {
     "ethers": "6.1.0"

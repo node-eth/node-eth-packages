@@ -1,0 +1,81 @@
+<script type="text/javascript">
+    RED.nodes.registerType("opt-node", {
+        category: "Push Protocol",
+        color: "#f5b9f4",
+        icon: "font-awesome/fa-bell",
+        defaults: {
+            name: { value: "", required: false },
+            env: { value: "prod", required: true },
+            method: { value: "opt-in", required: true },
+            userConfiguration: { type: "userConfiguration", required: true },
+            signerConfiguration: { type: "signerConfiguration", required: true },
+        },
+        inputs: 1,
+        outputs: 1,
+        label: function () {
+                    return `${this.name}` || "Opt in or out";
+        },
+        paletteLabel: 'Opt-in-and-out',
+        oneditprepare: function () {
+            $("#node-input-env").typedInput({
+                types: [
+                    {
+                        value: "env",
+                        options: [
+                            { value: "prod", label: "Production (prod) - default" },
+                            { value: "dev", label: "Development (dev)" },
+                            { value: "staging", label: "Staging (staging)" },
+                        ],
+                    },
+                ],
+            });
+            $("#node-input-method").typedInput({
+                types: [
+                    {
+                        value: "method",
+                        options: [
+                            { value: "opt-in", label: "Subscribe" },
+                            { value: "opt-out", label: "Unsubscribe" },
+                        ],
+                    },
+                ],
+            })
+        },
+    })
+</script>
+
+<script type="text/html" data-template-name="opt-node">
+    <br>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" />
+    </div>
+    <br>
+    <br>
+    <div class="form-row">
+        <label for="node-input-method"> Method:</label>
+        <input type="text" id="node-input-method" />
+    </div>
+    <div class="form-row">
+        <label for="node-input-userConfiguration">Channel</label>
+        <input type="text" id="node-input-userConfiguration" />
+    </div>
+    <div class="form-row">
+        <label for="node-input-signerConfiguration">User</label>
+        <input type="text" id="node-input-signerConfiguration" />
+    </div>
+    
+    <br>
+    <div class="form-tips">
+        <span>This action requires the user to operate as a <b>signer</b>, signing the message while opting in/out.</span>
+    </div>
+    <br>
+    <br>
+    <div class="form-row">
+        <label for="node-input-method"><i class="fa fa-cogs"></i> Pick Environment:</label>
+        <input type="text" id="node-input-env" />
+    </div>
+    <div class="form-tips">
+        <span>Leave environment set to <b>Production</b> if you are not sure (production is <b>Default</b>)</span>
+    </div>
+</script>

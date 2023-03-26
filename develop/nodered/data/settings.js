@@ -379,6 +379,15 @@ module.exports = {
          */
         //tours: false,
 
+        page: {
+            title: 'Node-ETH',
+            favicon: "./img/svg/NodeETH.svg",
+        },
+        header: {
+            title: 'NodeETH',
+            favicon: "./img/svg/NodeETH.svg",
+            url: 'https://nodeeth.org'
+        },
         palette: {
             /** The following property can be used to order the categories in the editor
              * palette. If a node's category is not in the list, the category will get

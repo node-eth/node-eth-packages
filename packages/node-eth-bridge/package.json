@@ -1,0 +1,8 @@
+{
+  "name": "node-eth-bridge",
+  "packageManager": "yarn@3.5.0",
+  "dependencies": {
+    "@hop-protocol/sdk": "^0.0.1-beta.441",
+    "ethers": "5.7.2"
+  }
+}
