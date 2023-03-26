@@ -1,0 +1,21 @@
+{
+    "name": "node-eth-optimism",
+    "version": "1.0.0",
+    "description": "Optimism nodes for the node-eth project",
+    "main": "index.js",
+    "node-red": {
+        "version": ">=2.0.0",
+        "nodes": {
+            "OptiGetContractBalance": "nodes/OptiGetContractBalance.js",
+            "OptiReadContract": "nodes/OptiReadContract.js",
+            "OptiWriteContract": "nodes/OptiWriteContract.js",
+            "OptiTransfer": "nodes/OptiTransfer.js",
+            "OptiReadAccount": "nodes/OptiReadAccount.js"
+        }
+    },
+    "author": "Luka Radisavljevic",
+    "license": "ISC",
+    "dependencies": {
+        "ethers": "6.1.0"
+    }
+}

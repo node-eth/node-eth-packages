@@ -1,0 +1,21 @@
+{
+    "name": "node-eth-ethereum",
+    "version": "1.0.0",
+    "description": "Ethereum nodes for the node-eth project",
+    "main": "index.js",
+    "node-red": {
+        "version": ">=2.0.0",
+        "nodes": {
+            "EthGetContractBalance": "nodes/EthGetContractBalance.js",
+            "EthReadContract": "nodes/EthReadContract.js",
+            "EthWriteContract": "nodes/EthWriteContract.js",
+            "EthTransfer": "nodes/EthTransfer.js",
+            "EthReadAccount": "nodes/EthReadAccount.js"
+        }
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "ethers": "6.1.0"
+    }
+}

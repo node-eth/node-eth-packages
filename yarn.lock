@@ -3825,9 +3825,27 @@ node-addon-api@^2.0.0:
   dependencies:
     ethers "6.1.0"
 
+"node-eth-ethereum@file:/home/luka/Projects/node-eth/node-eth-packages/packages/node-eth-ethereum":
+  version "1.0.0"
+  resolved "file:packages/node-eth-ethereum"
+  dependencies:
+    ethers "6.1.0"
+
 "node-eth-general@file:/home/luka/Projects/node-eth/node-eth-packages/packages/node-eth-general":
   version "1.0.0"
   resolved "file:packages/node-eth-general"
+  dependencies:
+    ethers "6.1.0"
+
+"node-eth-optimism@file:/home/luka/Projects/node-eth/node-eth-packages/packages/node-eth-optimism":
+  version "1.0.0"
+  resolved "file:packages/node-eth-optimism"
+  dependencies:
+    ethers "6.1.0"
+
+"node-eth-polygon@file:/home/luka/Projects/node-eth/node-eth-packages/packages/node-eth-polygon":
+  version "1.0.0"
+  resolved "file:packages/node-eth-polygon"
   dependencies:
     ethers "6.1.0"
 

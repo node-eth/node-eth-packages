@@ -31,7 +31,10 @@ pid=$(lsof -i:1880 -t); kill -TERM $pid || kill -KILL $pid
 echo "Installing the packages"
 npm install $ROOT_DIR/packages/node-eth-general 
 npm install $ROOT_DIR/packages/node-eth-configuration 
-npm install $ROOT_DIR/packages/node-eth-push 
+npm install $ROOT_DIR/packages/node-eth-push
+npm install $ROOT_DIR/packages/node-eth-ethereum
+npm install $ROOT_DIR/packages/node-eth-polygon
+npm install $ROOT_DIR/packages/node-eth-optimism
 echo "Done installing the packages"
 
 

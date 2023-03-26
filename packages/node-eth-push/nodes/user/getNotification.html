@@ -1,50 +1,68 @@
 <script type="text/javascript">
-  RED.nodes.registerType("getUserSubscriptions", {
-    category: "Push Protocol",
-    color: "#f5b9f4",
-    icon: "font-awesome/fa-bell",
-    defaults: {
-      name: { value: "", required: false },
-      env: { value: "prod", required: true },
-      userConfiguration: { type: "userConfiguration", required: true },
-    },
-    inputs: 1,
-    outputs: 1,
-    label: function () {
-      return this.name || "User Subscriptions";
-    },
-    oneditprepare: function () {
-      $("#node-input-env").typedInput({
-        types: [
-          {
-            value: "env",
-            options: [
-              { value: "prod", label: "Production (prod) - default" },
-              { value: "dev", label: "Development (dev)" },
-              { value: "staging", label: "Staging (staging)" },
-            ],
-          },
-        ],
-      });
-    },
-  });
-</script>
-
-<script type="text/html" data-template-name="getUserSubscriptions">
-  <div class="form-row">
-    <label for="node-input-name">Name</label>
-    <input type="text" id="node-input-name" />
-  </div>
-  <div class="form-row">
-    <label for="node-input-userConfiguration">User</label>
-    <input type="text" id="node-input-userConfiguration" />
-  </div>
-  <div class="form-row">
-    <label for="node-input-env">Choose API environment:</label>
-    <input type="text" id="node-input-env" />
-  </div>
-</script>
-
-<script type="text/markdown" data-help-name="getUserSubscriptions">
-  A node to get the balance of a deployed ethereum smart contract.
-</script>
+    RED.nodes.registerType("getNotification", {
+      category: "Push Protocol",
+      color: "#f5b9f4",
+      icon: "font-awesome/fa-bell",
+      defaults: {
+        name: { value: "", required: false },
+        env: { value: "prod", required: true },
+        spam: { value: false, required: true },
+        userConfiguration: { type: "userConfiguration", required: true },
+      },
+      inputs: 1,
+      outputs: 1,
+      paletteLabel: 'User-Notifications',
+      label: function () {
+        return this.name || "Get User Notifications";
+      },
+      oneditprepare: function () {
+        $("#node-input-env").typedInput({
+          types: [
+            {
+              value: "env",
+              options: [
+                { value: "prod", label: "Production (prod) - default" },
+                { value: "dev", label: "Development (dev)" },
+                { value: "staging", label: "Staging (staging)" },
+              ],
+            },
+          ],
+        });
+        $("#node-input-spam").typedInput({
+          types: [
+            {
+              value: "spam",
+              options: [
+                {value: false, label: "False - default"},
+                {value: true, label: "True"}
+              ]
+            }
+          ]
+        })
+      },
+    });
+  </script>
+  
+  <script type="text/html" data-template-name="getNotification">
+    <div class="form-row">
+      <label for="node-input-name">Name</label>
+      <input type="text" id="node-input-name" />
+    </div>
+    <div class="form-row">
+      <label for="node-input-userConfiguration">User</label>
+      <input type="text" id="node-input-userConfiguration" />
+    </div>
+    <div class="form-row">
+      <label for="node-input-env">Choose API environment:</label>
+      <input type="text" id="node-input-env" />
+    </div>
+    <div class="form-row">
+      <label for="node-input-spam">Fetch Spam:</label>
+      <input type="text" id="node-input-spam" />
+    </div>
+  </script>
+  
+  <script type="text/markdown" data-help-name="getNotification">
+    A node to get the balance of a deployed ethereum smart contract.
+  </script>
+  

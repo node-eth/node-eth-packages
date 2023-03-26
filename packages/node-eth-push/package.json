@@ -15,7 +15,7 @@
     }
   },
   "packageManager": "yarn@3.5.0",
-  "author": "",
+  "author": "Luka Radisavljevic",
   "license": "ISC",
   "dependencies": {
     "@pushprotocol/restapi": "^0.9.0",

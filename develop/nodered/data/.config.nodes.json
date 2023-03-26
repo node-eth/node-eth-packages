@@ -584,7 +584,6 @@
             "getNotification": {
                 "name": "getNotification",
                 "types": [
-                    "getUserSubscriptions",
                     "getNotification"
                 ],
                 "enabled": true,
@@ -596,7 +595,6 @@
             "getUserSubscriptions": {
                 "name": "getUserSubscriptions",
                 "types": [
-                    "getNotification",
                     "getUserSubscriptions"
                 ],
                 "enabled": true,
@@ -651,121 +649,192 @@
             }
         }
     },
-    "@andreashauschild/node-red-contrib-ethers-node": {
-        "name": "@andreashauschild/node-red-contrib-ethers-node",
-        "version": "0.0.29",
-        "local": true,
-        "user": true,
+    "node-eth-ethereum": {
+        "name": "node-eth-ethereum",
+        "version": "1.0.0",
+        "local": false,
+        "user": false,
         "nodes": {
-            "transfer": {
-                "name": "transfer",
+            "EthGetContractBalance": {
+                "name": "EthGetContractBalance",
                 "types": [
-                    "ethers-transfer"
+                    "Ethereum-Contract-Balance"
                 ],
                 "enabled": true,
-                "local": true,
+                "local": false,
                 "user": false,
-                "module": "@andreashauschild/node-red-contrib-ethers-node",
-                "file": "/home/luka/Projects/node-eth/node-eth-packages/develop/nodered/data/node_modules/@andreashauschild/node-red-contrib-ethers-node/nodes/ethers-transfer.js"
+                "module": "node-eth-ethereum",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-ethereum/nodes/EthGetContractBalance.js"
             },
-            "ethers-credentials": {
-                "name": "ethers-credentials",
+            "EthReadContract": {
+                "name": "EthReadContract",
                 "types": [
-                    "ethers-credentials"
+                    "Ethereum-Read-Contract"
                 ],
                 "enabled": true,
-                "local": true,
+                "local": false,
                 "user": false,
-                "module": "@andreashauschild/node-red-contrib-ethers-node",
-                "file": "/home/luka/Projects/node-eth/node-eth-packages/develop/nodered/data/node_modules/@andreashauschild/node-red-contrib-ethers-node/nodes/ethers-credentials.js"
+                "module": "node-eth-ethereum",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-ethereum/nodes/EthReadContract.js"
             },
-            "ethers-rpc": {
-                "name": "ethers-rpc",
+            "EthWriteContract": {
+                "name": "EthWriteContract",
                 "types": [
-                    "ethers-rpc"
+                    "Ethereum-Write-Contract"
                 ],
                 "enabled": true,
-                "local": true,
+                "local": false,
                 "user": false,
-                "module": "@andreashauschild/node-red-contrib-ethers-node",
-                "file": "/home/luka/Projects/node-eth/node-eth-packages/develop/nodered/data/node_modules/@andreashauschild/node-red-contrib-ethers-node/nodes/ethers-rpc.js"
+                "module": "node-eth-ethereum",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-ethereum/nodes/EthWriteContract.js"
             },
-            "ethers-deploy": {
-                "name": "ethers-deploy",
+            "EthTransfer": {
+                "name": "EthTransfer",
                 "types": [
-                    "ethers-deploy"
+                    "Ethereum-Transfer"
                 ],
                 "enabled": true,
-                "local": true,
+                "local": false,
                 "user": false,
-                "module": "@andreashauschild/node-red-contrib-ethers-node",
-                "file": "/home/luka/Projects/node-eth/node-eth-packages/develop/nodered/data/node_modules/@andreashauschild/node-red-contrib-ethers-node/nodes/ethers-deploy.js"
+                "module": "node-eth-ethereum",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-ethereum/nodes/EthTransfer.js"
             },
-            "ethers-contract": {
-                "name": "ethers-contract",
+            "EthReadAccount": {
+                "name": "EthReadAccount",
                 "types": [
-                    "ethers-contract"
+                    "Ethereum-Read-Account"
                 ],
                 "enabled": true,
-                "local": true,
+                "local": false,
                 "user": false,
-                "module": "@andreashauschild/node-red-contrib-ethers-node",
-                "file": "/home/luka/Projects/node-eth/node-eth-packages/develop/nodered/data/node_modules/@andreashauschild/node-red-contrib-ethers-node/nodes/ethers-contract.js"
+                "module": "node-eth-ethereum",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-ethereum/nodes/EthReadAccount.js"
+            }
+        }
+    },
+    "node-eth-polygon": {
+        "name": "node-eth-polygon",
+        "version": "1.0.0",
+        "local": false,
+        "user": false,
+        "nodes": {
+            "PolyGetContractBalance": {
+                "name": "PolyGetContractBalance",
+                "types": [
+                    "Polygon-Contract-Balance"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-eth-polygon",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-polygon/nodes/PolyGetContractBalance.js"
             },
-            "ethers-write-contract": {
-                "name": "ethers-write-contract",
+            "PolyReadContract": {
+                "name": "PolyReadContract",
                 "types": [
-                    "ethers-write-contract"
+                    "Polygon-Read-Contract"
                 ],
                 "enabled": true,
-                "local": true,
+                "local": false,
                 "user": false,
-                "module": "@andreashauschild/node-red-contrib-ethers-node",
-                "file": "/home/luka/Projects/node-eth/node-eth-packages/develop/nodered/data/node_modules/@andreashauschild/node-red-contrib-ethers-node/nodes/ethers-write-contract.js"
+                "module": "node-eth-polygon",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-polygon/nodes/PolyReadContract.js"
             },
-            "ethers-read-contract": {
-                "name": "ethers-read-contract",
+            "PolyWriteContract": {
+                "name": "PolyWriteContract",
                 "types": [
-                    "ethers-read-contract"
+                    "Polygon-Write-Contract"
                 ],
                 "enabled": true,
-                "local": true,
+                "local": false,
                 "user": false,
-                "module": "@andreashauschild/node-red-contrib-ethers-node",
-                "file": "/home/luka/Projects/node-eth/node-eth-packages/develop/nodered/data/node_modules/@andreashauschild/node-red-contrib-ethers-node/nodes/ethers-read-contract.js"
+                "module": "node-eth-polygon",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-polygon/nodes/PolyWriteContract.js"
             },
-            "ethers-read-account": {
-                "name": "ethers-read-account",
+            "PolyTransfer": {
+                "name": "PolyTransfer",
                 "types": [
-                    "ethers-read-account"
+                    "Polygon-Transfer"
                 ],
                 "enabled": true,
-                "local": true,
+                "local": false,
                 "user": false,
-                "module": "@andreashauschild/node-red-contrib-ethers-node",
-                "file": "/home/luka/Projects/node-eth/node-eth-packages/develop/nodered/data/node_modules/@andreashauschild/node-red-contrib-ethers-node/nodes/ethers-read-account.js"
+                "module": "node-eth-polygon",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-polygon/nodes/PolyTransfer.js"
             },
-            "ethers-events": {
-                "name": "ethers-events",
+            "PolyReadAccount": {
+                "name": "PolyReadAccount",
                 "types": [
-                    "ethers-events"
+                    "Polygon-Read-Account"
                 ],
                 "enabled": true,
-                "local": true,
+                "local": false,
                 "user": false,
-                "module": "@andreashauschild/node-red-contrib-ethers-node",
-                "file": "/home/luka/Projects/node-eth/node-eth-packages/develop/nodered/data/node_modules/@andreashauschild/node-red-contrib-ethers-node/nodes/ethers-events.js"
+                "module": "node-eth-polygon",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-polygon/nodes/PolyReadAccount.js"
+            }
+        }
+    },
+    "node-eth-optimism": {
+        "name": "node-eth-optimism",
+        "version": "1.0.0",
+        "local": false,
+        "user": false,
+        "nodes": {
+            "OptiGetContractBalance": {
+                "name": "OptiGetContractBalance",
+                "types": [
+                    "Optimism-Contract-Balance"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-eth-optimism",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-optimism/nodes/OptiGetContractBalance.js"
             },
-            "ethers-provider": {
-                "name": "ethers-provider",
+            "OptiReadContract": {
+                "name": "OptiReadContract",
                 "types": [
-                    "ethers-provider"
+                    "Optimism-Read-Contract"
                 ],
                 "enabled": true,
-                "local": true,
+                "local": false,
                 "user": false,
-                "module": "@andreashauschild/node-red-contrib-ethers-node",
-                "file": "/home/luka/Projects/node-eth/node-eth-packages/develop/nodered/data/node_modules/@andreashauschild/node-red-contrib-ethers-node/nodes/ethers-provider.js"
+                "module": "node-eth-optimism",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-optimism/nodes/OptiReadContract.js"
+            },
+            "OptiWriteContract": {
+                "name": "OptiWriteContract",
+                "types": [
+                    "Optimism-Write-Contract"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-eth-optimism",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-optimism/nodes/OptiWriteContract.js"
+            },
+            "OptiTransfer": {
+                "name": "OptiTransfer",
+                "types": [
+                    "Optimism-Transfer"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-eth-optimism",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-optimism/nodes/OptiTransfer.js"
+            },
+            "OptiReadAccount": {
+                "name": "OptiReadAccount",
+                "types": [
+                    "Optimism-Read-Account"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-eth-optimism",
+                "file": "/home/luka/Projects/node-eth/node-eth-packages/node_modules/node-eth-optimism/nodes/OptiReadAccount.js"
             }
         }
     }

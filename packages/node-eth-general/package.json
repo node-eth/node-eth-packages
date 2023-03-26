@@ -14,7 +14,7 @@
       "ConfigureProviders": "nodes/ConfigureProviders.js"
     }
   },
-  "author": "",
+  "author": "Ben Lazzeroni",
   "license": "ISC",
   "dependencies": {
     "ethers": "6.1.0"
