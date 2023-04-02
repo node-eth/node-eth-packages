@@ -25,23 +25,35 @@ echo "Stopping NodeRED on port 1880"
 echo "Don't worry, browser will preserve your data"
 pid=$(lsof -i:1880 -t); kill -TERM $pid || kill -KILL $pid
 
+# Check if node-eth-general is already installed
+if [ -d "node_modules/node-eth-general" ]; then
+    echo "installing the packages"
+    npm install $ROOT_DIR/packages/node-eth-general > /dev/null 2>&1
+    npm install $ROOT_DIR/packages/node-eth-configuration > /dev/null 2>&1
+    npm install $ROOT_DIR/packages/node-eth-push > /dev/null 2>&1
+    npm install $ROOT_DIR/packages/node-eth-ethereum > /dev/null 2>&1
+    npm install $ROOT_DIR/packages/node-eth-polygon > /dev/null 2>&1
+    npm install $ROOT_DIR/packages/node-eth-optimism > /dev/null 2>&1
+    cd develop/nodered && npm install > /dev/null 2>&1
+    echo "Done installing the packages"
+else
+    # Run npm install in the current directory + packages
+    echo "installing the packages and nodered"
+    npm install $ROOT_DIR/packages/node-eth-general > /dev/null 2>&1
+    npm install $ROOT_DIR/packages/node-eth-configuration > /dev/null 2>&1
+    npm install $ROOT_DIR/packages/node-eth-push > /dev/null 2>&1
+    npm install $ROOT_DIR/packages/node-eth-ethereum > /dev/null 2>&1
+    npm install $ROOT_DIR/packages/node-eth-polygon > /dev/null 2>&1
+    npm install $ROOT_DIR/packages/node-eth-optimism > /dev/null 2>&1
+    cd develop/nodedred && npm install > /dev/null 2>&1
+    echo "Done installing the packages"
+fi
 
-# Installing the packages directly to the local nodeRED instance
-# TODO - add error checking and proper feedback
-echo "Installing the packages"
-npm install $ROOT_DIR/packages/node-eth-general 
-npm install $ROOT_DIR/packages/node-eth-configuration 
-npm install $ROOT_DIR/packages/node-eth-push
-npm install $ROOT_DIR/packages/node-eth-ethereum
-npm install $ROOT_DIR/packages/node-eth-polygon
-npm install $ROOT_DIR/packages/node-eth-optimism
-echo "Done installing the packages"
-
+# Wait for all background processes to finish
+wait
 
 # Start nodeRED once again
 cd develop
 cd nodered
 npm start
 echo $PWD
-
-
